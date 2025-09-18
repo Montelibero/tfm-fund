@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Third Fund Montelibero — community charity foundation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Non-profit charity fund: we collect donations and transparently allocate grants to community projects.">
+  <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="alternate" hreflang="ru" href="/rus/">
+  <link rel="alternate" hreflang="en" href="/eng/">
+  <link rel="alternate" hreflang="sr-ME" href="/cnr/">
+  <link rel="alternate" hreflang="x-default" href="/eng/">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="nav__brand" href="../">
+        <span class="nav__logo" aria-hidden="true"></span>
+        <span class="nav__title">Third Fund Montelibero</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#how">How it works</a>
+        <a href="#projects">Projects</a>
+        <a href="#council">Council</a>
+        <a class="btn btn--brand" href="#donate">Donate</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <a data-lang="rus" href="../rus/">RUS</a>
+        <a data-lang="cnr" href="../cnr/">CNR</a>
+        <a data-lang="eng" href="../eng/" aria-current="true">ENG</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <h1>Transparent community fund for useful initiatives</h1>
+          <p>We accept donations and award grants for projects such as infrastructure development, educational initiatives, events, conferences, development, publications, and much more.</p>
+          <div style="display:flex; gap:10px;">
+            <a class="btn btn--brand" href="#donate">Donate</a>
+            <a class="btn btn--ghost" href="#how">How it works</a>
+          </div>
+        </div>
+        <div>
+          <img src="../media/cover.jpg" alt="Fund cover image: collaboration and support" style="width:100%; border-radius:14px; border:1px solid var(--line)">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <div class="cards">
+          <div class="card"><h3>Mission</h3><p>Support and scale initiatives that benefit the Montelibero movement through voluntary donations.</p></div>
+          <div class="card"><h3>Transparency</h3><p>Decisions are made by the TFM Council, which includes the largest donors. Reports on grants and donations are published openly.</p></div>
+          <div class="card"><h3>Accountability</h3><p>Strict selection criteria, targeted use of funds, delivery control.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="cards">
+          <div class="card"><h3>1. Collect</h3><p>Donors make donations to the fund through a special account.</p></div>
+          <div class="card"><h3>2. Select</h3><p>The Council reviews applications and approves projects.</p></div>
+          <div class="card"><h3>3. Fund</h3><p>We allocate grants and publish reports and metrics.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Supported projects</h2>
+        <div class="projects">
+          <article class="project">
+            <img src="../media/cover-fest.jpeg" alt="">
+            <div class="project__body">
+              <h4>MTL Fest</h4>
+              <p>Support for organization and speakers.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-map.jpeg" alt="">
+            <div class="project__body">
+              <h4>OpenStreetMap grant</h4>
+              <p>Better maps and open city data.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-book.jpeg" alt="">
+            <div class="project__body">
+              <h4>Publications</h4>
+              <p>Essays, books, educational materials.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="council" class="section section--tight">
+      <div class="container">
+        <h2>Fund Council</h2>
+        <p>The Council consists of the fund's largest donors. The number of Council members is limited to 10 people. Decisions are made collectively. The current composition of the Council and the TFM Charter are publicly available.</p>
+      </div>
+    </section>
+
+    <section id="donate" class="section">
+      <div class="container">
+        <h2>Donate</h2>
+        <p>You can support the fund by transferring any amount in EURMTL, USDM, or SATSMTL to the donation account on the Stellar blockchain.</p>
+        <a class="btn btn--brand" href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE" target="_blank" rel="noopener">See details</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section">
+    <div class="container footer__grid">
+      <div>
+        <h3>Contacts</h3>
+        <p>Telegram channel: <a href="https://t.me/tfm_voice">@tfm_voice</a></p>
+        <p>Public reports and decisions — on Montelibero wiki.</p>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <p>NPO. Earmarked donations. Transparent reporting.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    function setCookie(name, value, days){
+      var d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
+      document.cookie = name + '=' + encodeURIComponent(value) + '; path=/; SameSite=Lax; expires=' + d.toUTCString();
+    }
+    var links = document.querySelectorAll('.lang a[data-lang]');
+    links.forEach(function(a){ a.addEventListener('click', function(){ setCookie('lang', a.dataset.lang, 365); }); });
+  })();
+  </script>
+</body>
+</html>
