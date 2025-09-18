@@ -6,4 +6,7 @@
 3) In index.php, make changes to define and redirect to the new language.
 
 ## How to add a supported project
-In the section <div class="projects">, add a new  <article class="project"> and fill it in according to the template.
+In the section `<div class="projects">`, add a new `<article class="project">` and fill it in according to the template.
+
+## How to start locally
+`php -S localhost:8000`
