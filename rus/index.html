@@ -22,7 +22,6 @@
       <nav class="menu" aria-label="Главная навигация">
         <a href="#about">О фонде</a>
         <a href="#how">Как это работает</a>
-        <a href="#projects">Проекты</a>
         <a href="#council">Совет фонда</a>
         <a class="btn btn--brand" href="#donate">Пожертвовать</a>
       </nav>
@@ -34,7 +33,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="container hero__grid">
         <div>
@@ -42,11 +41,10 @@
           <p>Мы принимаем пожертвования и выделяем гранты на проекты: развитие инфраструктуры, образовательные инициативы, события, конференции, разработка, публикации и многое другое.</p>
           <div style="display:flex; gap:10px;">
             <a class="btn btn--brand" href="#donate">Пожертвовать</a>
-            <a class="btn btn--ghost" href="#how">Как работает фонд</a>
           </div>
         </div>
         <div>
-          <img src="../media/cover.jpg" alt="Обложка фонда: совместная работа и поддержка" style="width:100%; border-radius:14px; border:1px solid var(--line)">
+          <img src="../media/cover.jpeg" alt="Обложка фонда: совместная работа и поддержка" style="width:100%; border-radius:14px; border:1px solid var(--line)">
         </div>
       </div>
     </section>
@@ -82,36 +80,7 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Проекты, поддержанные фондом</h2>
-        <div class="projects">
-          <article class="project">
-            <img src="../media/cover-fest.jpeg" alt="">
-            <div class="project__body">
-              <h4>MTL Fest</h4>
-              <p>Поддержка организационных расходов и спикеров.</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="../media/cover-map.jpeg" alt="">
-            <div class="project__body">
-              <h4>OpenStreetMap-грант</h4>
-              <p>Развитие карт и открытых данных для города.</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="../media/cover-book.jpeg" alt="">
-            <div class="project__body">
-              <h4>Публикации</h4>
-              <p>Эссе, книги, образовательные материалы.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="council" class="section section--tight">
+    <section id="council" class="section section">
       <div class="container">
         <h2>Совет фонда</h2>
         <p>Совет состоит из крупнейших доноров фонда. Количество членов Совета ограничено 10 людьми. Решения принимаются коллегиально. Текущий состав Совета и Устав ТФМ находятся в публичном доступе.</p>
@@ -125,6 +94,78 @@
         <a class="btn btn--brand" href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE" target="_blank" rel="noopener">Перейти к реквизитам</a>
       </div>
     </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Проекты, поддержанные фондом</h2>
+        <div class="projects">
+          <article class="project">
+            <img src="../media/cover-fest.jpeg" alt="">
+            <a class="project_more" href="https://monte.wiki/ru/%D0%A4%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C_Montelibero_FEST" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>MTL Fest</h4>
+              <p>Поддержка организационных расходов и спикеров.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-map.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/2829" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>OpenStreetMap-грант</h4>
+              <p>Развитие карт и открытых данных для города Бар.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-book1.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/3636" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>Книга о криптовалютах</h4>
+              <p>Спонсорство издания книги «Основы криптовалют» на черногорском языке.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-LiOL.jpeg" alt="">
+            <a class="project_more" href="https://t.me/IA_Montelibero/27" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>Liberty in Our Lifetime</h4>
+              <p>Оплата билетов для поездки на фестиваль Liberty in Our Lifetime 2023 и 2024.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-book2.jpeg" alt="">
+            <a class="project_more" href="https://t.me/Montelibero_ru/8528" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>Книга «АНКАП»</h4>
+              <p>Беспроцентный кредит на печать тиража книги про Анкап.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-merch.jpeg" alt="">
+            <a class="project_more" href="https://t.me/Montelibero_ru/8528" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>Мерч</h4>
+              <p>Беспроцентный кредит на на выпуск монтелиберского мерча.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-libertycon.jpeg" alt="">
+            <a class="project_more" href="https://libertycon.net/blog/libertycon-europe-is-coming-to-tbilisi-georgia/" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>LibertyCon</h4>
+              <p>Поддержка поездки представителей на LibertyCon в Тбилиси.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-libertyconf.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/3718" aria-label="Узнать подробнее"></a>
+            <div class="project_body">
+              <h4>Liberty Conf</h4>
+              <p>Cпонсорство либертарианской конференции в Тбилиси II Liberty Conf.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer section">
@@ -132,12 +173,15 @@
       <div>
         <h3>Контакты</h3>
         <p>Telegram канал: <a href="https://t.me/tfm_voice">@tfm_voice</a></p>
-        <p>Публичные отчёты и решения — на вики Монтелиберо.</p>
+        <p>Публичные отчёты и решения — на <a href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE">вики Монтелиберо</a>.</p>
       </div>
       <div>
         <h3>Юридическая информация</h3>
         <p>НКО. Целевые пожертвования. Прозрачная отчётность.</p>
       </div>
+    </div>
+    <div class="container">
+      <p class="made">Сделано с любовью для <a href="https://montelibero.org/" target="_blank" rel="noopener">Монтелиберо</a><img src="../media/logo-mtl.svg" alt="Montelibero"></p>
     </div>
   </footer>
 

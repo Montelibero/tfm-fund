@@ -22,7 +22,6 @@
       <nav class="menu" aria-label="Navigacija">
         <a href="#about">O fondu</a>
         <a href="#how">Kako funkcioniše</a>
-        <a href="#projects">Projekti</a>
         <a href="#council">Savjet</a>
         <a class="btn btn--brand" href="#donate">Doniraj</a>
       </nav>
@@ -34,7 +33,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="container hero__grid">
         <div>
@@ -42,11 +41,10 @@
           <p>Primamo donacije i dodjeljujemo grantove za projekte koji uključuju razvoj infrastrukture, obrazovne inicijative, događaje, konferencije, publikacije i još mnogo toga.</p>
           <div style="display:flex; gap:10px;">
             <a class="btn btn--brand" href="#donate">Doniraj</a>
-            <a class="btn btn--ghost" href="#how">Kako radi</a>
           </div>
         </div>
         <div>
-          <img src="../media/cover.jpg" alt="Naslovna slika fonda" style="width:100%; border-radius:14px; border:1px solid var(--line)">
+          <img src="../media/cover.jpeg" alt="Naslovna slika fonda" style="width:100%; border-radius:14px; border:1px solid var(--line)">
         </div>
       </div>
     </section>
@@ -73,36 +71,7 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Podržani projekti</h2>
-        <div class="projects">
-          <article class="project">
-            <img src="../media/cover-fest.jpeg" alt="">
-            <div class="project__body">
-              <h4>MTL Fest</h4>
-              <p>Podrška organizaciji i govornicima.</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="../media/cover-map.jpeg" alt="">
-            <div class="project__body">
-              <h4>OpenStreetMap grant</h4>
-              <p>Bolje mape i otvoreni podaci o gradu.</p>
-            </div>
-          </article>
-          <article class="project">
-            <img src="../media/cover-book.jpeg" alt="">
-            <div class="project__body">
-              <h4>Publikacije</h4>
-              <p>Esei, knjige, obrazovni materijali.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="council" class="section section--tight">
+    <section id="council" class="section section">
       <div class="container">
         <h2>Savjet fonda</h2>
         <p>Vijeće se sastoji od najvećih donatora Fondacije. Članstvo u Savjetu je ograničeno na 10 osoba. Odluke se donose kolektivno. Trenutni sastav Savjeta i Povelja Fondacije su javno dostupni.</p>
@@ -116,6 +85,78 @@
         <a class="btn btn--brand" href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE" target="_blank" rel="noopener">Detalji</a>
       </div>
     </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Podržani projekti</h2>
+        <div class="projects">
+          <article class="project">
+            <img src="../media/cover-fest.jpeg" alt="">
+            <a class="project_more" href="https://monte.wiki/ru/%D0%A4%D0%B5%D1%81%D1%82%D0%B8%D0%B2%D0%B0%D0%BB%D1%8C_Montelibero_FEST" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>MTL Fest</h4>
+              <p>Podrška organizaciji i govornicima.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-map.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/2829" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>OpenStreetMap grant</h4>
+              <p>Razvoj karata i otvorenih podataka za grad Bar.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-book1.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/3636" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>Knjiga o kriptovalutama</h4>
+              <p>Sponzorstvo izdanja knjige "Osnove kriptovaluta" na crnogorskom jeziku.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-LiOL.jpeg" alt="">
+            <a class="project_more" href="https://t.me/IA_Montelibero/27" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>Liberty in Our Lifetime</h4>
+              <p>Plaćanje karata za pohađanje festivala Liberty in Our Lifetime 2023 i 2024.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-book2.jpeg" alt="">
+            <a class="project_more" href="https://t.me/Montelibero_ru/8528" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>Knjiga "ANKAP"</h4>
+              <p>Bespovijatni kredit za štampanje izdanja knjige o Ankapu.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-merch.jpeg" alt="">
+            <a class="project_more" href="https://t.me/Montelibero_ru/8528" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>Roba</h4>
+              <p>Bespovijatni kredit za proizvodnju Montelibero robe.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-libertycon.jpeg" alt="">
+            <a class="project_more" href="https://libertycon.net/blog/libertycon-europe-is-coming-to-tbilisi-georgia/" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>LibertyCon</h4>
+              <p>Podrška putovanju predstavnika na LibertyCon u Tbilisiju.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-libertyconf.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/3718" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>Liberty Conf</h4>
+              <p>Sponzorstvo libertarijanske konferencije u Tbilisiju II Liberty Conf.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer section">
@@ -123,12 +164,15 @@
       <div>
         <h3>Kontakt</h3>
         <p>Telegram kanal: <a href="https://t.me/tfm_voice">@tfm_voice</a></p>
-        <p>Javni izvještaji i odluke — na wiki Montelibero.</p>
+        <p>Javni izvještaji i odluke — na <a href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE">wiki Montelibero</a>.</p>
       </div>
       <div>
         <h3>Pravno</h3>
         <p>NVO. Namjenske donacije. Transparentno izvještavanje.</p>
       </div>
+    </div>
+    <div class="container">
+      <p class="made">Napravili s ljubavlju za <a href="https://montelibero.org/" target="_blank" rel="noopener">Montelibero</a><img src="../media/logo-mtl.svg" alt="Montelibero"></p>
     </div>
   </footer>
 
