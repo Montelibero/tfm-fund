@@ -10,6 +10,7 @@
   <link rel="alternate" hreflang="ru" href="/rus/">
   <link rel="alternate" hreflang="en" href="/eng/">
   <link rel="alternate" hreflang="sr-ME" href="/cnr/">
+  <link rel="alternate" hreflang="es" href="/spa/">
   <link rel="alternate" hreflang="x-default" href="/eng/">
 </head>
 <body>
@@ -26,9 +27,14 @@
         <a class="btn btn--brand" href="#donate">Doniraj</a>
       </nav>
       <div class="lang" role="group" aria-label="Jezik">
-        <a data-lang="rus" href="../rus/">RUS</a>
-        <a data-lang="cnr" href="../cnr/" aria-current="true">CNR</a>
-        <a data-lang="eng" href="../eng/">ENG</a>
+        <input type="checkbox" id="lang-toggle-cnr" class="lang__cb" aria-hidden="true">
+        <label for="lang-toggle-cnr" class="lang__summary" aria-label="Jezik">CNR</label>
+        <div class="lang__list" role="menu">
+          <a data-lang="rus" href="../rus/" role="menuitem">RUS</a>
+          <a data-lang="cnr" href="../cnr/" aria-current="true" role="menuitem">CNR</a>
+          <a data-lang="spa" href="../spa/" role="menuitem">SPA</a>
+          <a data-lang="eng" href="../eng/" role="menuitem">ENG</a>
+        </div>
       </div>
     </div>
   </header>
@@ -71,7 +77,7 @@
       </div>
     </section>
 
-    <section id="council" class="section section">
+    <section id="council" class="section">
       <div class="container">
         <h2>Savjet fonda</h2>
         <p>Vijeće se sastoji od najvećih donatora Fondacije. Članstvo u Savjetu je ograničeno na 10 osoba. Odluke se donose kolektivno. Trenutni sastav Savjeta i Povelja Fondacije su javno dostupni.</p>
@@ -82,7 +88,41 @@
       <div class="container">
         <h2>Donacije</h2>
         <p>Možete podržati fond prebacivanjem bilo kojeg iznosa u EURMTL, USDM ili SATSMTL na račun za donacije na Stellar blockchainu.</p>
-        <a class="btn btn--brand" href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE" target="_blank" rel="noopener">Detalji</a>
+
+        <div class="donation-methods">
+          <div class="donation-method">
+            <h3>Podrška preko MTL Wallet</h3>
+            <p>Popularni novčanik u obliku Telegram bota.</p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="Unesite svoj iznos (MTL Wallet)">
+            <input type="hidden" name="method" value="mtl">
+            <input type="number" name="amount" min="1" step="1" placeholder="Iznos, EURMTL" value="10" required>
+            <button type="submit">Vaš iznos</button>
+          </form>
+          </div>
+
+          <div class="donation-method">
+            <h3>Podrška preko Sunce ili Lobster</h3>
+            <p>Stellar novčanici kao aplikacije.</p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="Unesite svoj iznos (Stellar)">
+            <input type="hidden" name="method" value="stellar">
+            <input type="number" name="amount" min="1" step="1" placeholder="Iznos, EURMTL" value="10" required>
+            <button type="submit">Vaš iznos</button>
+          </form>
+          </div>
+
+          <div class="donation-method">
+            <h3>Ili direktnim transferom</h3>
+            <p>Koristite bilo koji Stellar novčanik za prenos EURMTL na adresu fondacije.</p>
+            <div class="wallet-address">
+              <code class="address-text">GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN</code>
+            </div>
+            <p class="donation-note">Kliknite na adresu za kopiranje</p>
+          </div>
+        </div>
+
+        <div class="donation-info">
+          <a class="btn btn--brand" href="https://monte.wiki/ru/Stellar" target="_blank" rel="noopener">Šta je Stellar?</a>
+        </div>
       </div>
     </section>
 
@@ -147,11 +187,27 @@
             </div>
           </article>
           <article class="project">
+            <img src="../media/cover-wiki.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/2825" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>MonteWiki</h4>
+              <p>Plaćanje hostinga za MonteWiki, donacija za podršku.</p>
+            </div>
+          </article>
+          <article class="project">
             <img src="../media/cover-libertyconf.jpeg" alt="">
             <a class="project_more" href="https://t.me/tfm_talk/3718" aria-label="Detaljnije"></a>
             <div class="project_body">
               <h4>Liberty Conf</h4>
               <p>Sponzorstvo libertarijanske konferencije u Tbilisiju II Liberty Conf.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-mtltv.jpeg" alt="">
+            <a class="project_more" href="https://monte.wiki/ru/MTL-TV" aria-label="Detaljnije"></a>
+            <div class="project_body">
+              <h4>MTL TV</h4>
+              <p>Donacije za podršku aktivnostima.</p>
             </div>
           </article>
         </div>

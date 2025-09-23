@@ -10,6 +10,7 @@
   <link rel="alternate" hreflang="ru" href="/rus/">
   <link rel="alternate" hreflang="en" href="/eng/">
   <link rel="alternate" hreflang="sr-ME" href="/cnr/">
+  <link rel="alternate" hreflang="es" href="/spa/">
   <link rel="alternate" hreflang="x-default" href="/eng/">
 </head>
 <body>
@@ -26,9 +27,14 @@
         <a class="btn btn--brand" href="#donate">Donate</a>
       </nav>
       <div class="lang" role="group" aria-label="Language">
-        <a data-lang="rus" href="../rus/">RUS</a>
-        <a data-lang="cnr" href="../cnr/">CNR</a>
-        <a data-lang="eng" href="../eng/" aria-current="true">ENG</a>
+        <input type="checkbox" id="lang-toggle-en" class="lang__cb" aria-hidden="true">
+        <label for="lang-toggle-en" class="lang__summary" aria-label="Language">ENG</label>
+        <div class="lang__list" role="menu">
+          <a data-lang="rus" href="../rus/" role="menuitem">RUS</a>
+          <a data-lang="cnr" href="../cnr/" role="menuitem">CNR</a>
+          <a data-lang="spa" href="../spa/" role="menuitem">SPA</a>
+          <a data-lang="eng" href="../eng/" aria-current="true" role="menuitem">ENG</a>
+        </div>
       </div>
     </div>
   </header>
@@ -71,7 +77,7 @@
       </div>
     </section>
 
-    <section id="council" class="section section">
+    <section id="council" class="section">
       <div class="container">
         <h2>Fund Council</h2>
         <p>The Council consists of the fund's largest donors. The number of Council members is limited to 10 people. Decisions are made collectively. The current composition of the Council and the TFM Charter are publicly available.</p>
@@ -82,7 +88,41 @@
       <div class="container">
         <h2>Donate</h2>
         <p>You can support the fund by transferring any amount in EURMTL, USDM, or SATSMTL to the donation account on the Stellar blockchain.</p>
-        <a class="btn btn--brand" href="https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE" target="_blank" rel="noopener">See details</a>
+
+        <div class="donation-methods">
+          <div class="donation-method">
+            <h3>Support via MTL Wallet</h3>
+            <p>A popular custodial wallet in the form of a Telegram bot.</p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="Custom amount (MTL Wallet)">
+            <input type="hidden" name="method" value="mtl">
+            <input type="number" name="amount" min="1" step="1" placeholder="Amount, EURMTL" value="10" required>
+            <button type="submit">Custom amount</button>
+          </form>
+          </div>
+
+          <div class="donation-method">
+            <h3>Support via Sunce or Lobster</h3>
+            <p>Stellar wallets as apps.</p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="Custom amount (Stellar)">
+            <input type="hidden" name="method" value="stellar">
+            <input type="number" name="amount" min="1" step="1" placeholder="Amount, EURMTL" value="10" required>
+            <button type="submit">Custom amount</button>
+          </form>
+          </div>
+
+          <div class="donation-method">
+            <h3>Or direct transfer</h3>
+            <p>Use any Stellar wallet to transfer EURMTL to the fund address.</p>
+            <div class="wallet-address">
+              <code class="address-text">GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN</code>
+            </div>
+            <p class="donation-note">Click on the address to copy</p>
+          </div>
+        </div>
+
+        <div class="donation-info">
+          <a class="btn btn--brand" href="https://monte.wiki/ru/Stellar" target="_blank" rel="noopener">What is Stellar?</a>
+        </div>
       </div>
     </section>
 
@@ -147,11 +187,27 @@
             </div>
           </article>
           <article class="project">
+            <img src="../media/cover-wiki.jpeg" alt="">
+            <a class="project_more" href="https://t.me/tfm_talk/2825" aria-label="Learn more"></a>
+            <div class="project_body">
+              <h4>MonteWiki</h4>
+              <p>Hosting costs for MonteWiki, support donation.</p>
+            </div>
+          </article>
+          <article class="project">
             <img src="../media/cover-libertyconf.jpeg" alt="">
             <a class="project_more" href="https://t.me/tfm_talk/3718" aria-label="Learn more"></a>
             <div class="project_body">
               <h4>Liberty Conf</h4>
               <p>Sponsorship of the libertarian conference in Tbilisi II Liberty Conf.</p>
+            </div>
+          </article>
+          <article class="project">
+            <img src="../media/cover-mtltv.jpeg" alt="">
+            <a class="project_more" href="https://monte.wiki/ru/MTL-TV" aria-label="Learn more"></a>
+            <div class="project_body">
+              <h4>MTL TV</h4>
+              <p>Donations to support activity.</p>
             </div>
           </article>
         </div>

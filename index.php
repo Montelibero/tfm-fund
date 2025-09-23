@@ -33,12 +33,13 @@ function lang_from_accept(?string $hdr): string {
         $l = $c['lang'];
         if ($l === 'ru') return 'rus'; // Russian -> RUS
         if (in_array($l, ['cnr','sr','bs','hr','sh'], true)) return 'cnr'; // Montenegrin and neighboring -> CNR
+        if ($l === 'es') return 'spa'; // Spanish -> SPA
     }
     return 'eng'; // Default to English
 }
 
 // Cookies priority
-$valid = ['rus','eng','cnr'];
+$valid = ['rus','eng','cnr','spa'];
 if (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], $valid, true)) {
     $target = $_COOKIE['lang'];
 } else {
@@ -53,5 +54,6 @@ header('Cache-Control: no-store');
 switch ($target) {
     case 'rus': header('Location: ./rus/', true, 302); exit;
     case 'cnr': header('Location: ./cnr/', true, 302); exit;
+    case 'spa': header('Location: ./spa/', true, 302); exit;
     default:    header('Location: ./eng/', true, 302); exit;
 }
