@@ -1,5 +1,8 @@
 <?php
+
 declare(strict_types=1);
+
+require_once __DIR__ . '/config.php';
 
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
@@ -11,7 +14,7 @@ $amount = (string) ($_GET['amount'] ?? '');
 if ($method === 'mtl') {
   // Keep only digits for MTL Wallet
   $amount = preg_replace('/[^0-9]/', '', $amount);
-  $url = 'https://t.me/MyMTLWalletBot?start=eurmtl_tfm_voice-' . $amount;
+  $url = TG_WALLET_BOT_BASE . 'eurmtl_tfm_voice-' . $amount;
   header('Location: ' . $url, true, 302);
   exit;
 }
@@ -19,13 +22,13 @@ if ($method === 'mtl') {
 if ($method === 'stellar') {
   // Allow digits and dot for Stellar amount
   $amount = preg_replace('/[^0-9.]/', '', $amount);
-  $stellar = 'web+stellar:pay?destination=GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN'
+  $stellar = 'web+stellar:pay?destination=' . STELLAR_TFM_DONATION_ACCOUNT
     . '&amount=' . $amount
     . '&asset_code=EURMTL'
-    . '&asset_issuer=GACKTN5DAZGWXRWB2WLM6OPBDHAMT6SJNGLJZPQMEZBUR4JUGBX2UK7V'
+    . '&asset_issuer=' . EURMTL_ISSUER
     . '&memo=Donate+by+site'
     . '&memo_type=MEMO_TEXT';
-  $redirect = 'https://montelibero.net/redirect/?to=' . rawurlencode($stellar);
+  $redirect = MTL_REDIRECT_BASE . rawurlencode($stellar);
   header('Location: ' . $redirect, true, 302);
   exit;
 }
