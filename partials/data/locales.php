@@ -11,6 +11,7 @@ return [
             'html_lang' => 'en',
             'hreflang' => 'en',
             'og_locale' => 'en_US',
+            'accept' => ['en'],
             'label' => 'ENG',
         ],
         'rus' => [
@@ -18,6 +19,7 @@ return [
             'html_lang' => 'ru',
             'hreflang' => 'ru',
             'og_locale' => 'ru_RU',
+            'accept' => ['ru'],
             'label' => 'RUS',
         ],
         'spa' => [
@@ -25,6 +27,7 @@ return [
             'html_lang' => 'es',
             'hreflang' => 'es',
             'og_locale' => 'es_ES',
+            'accept' => ['es'],
             'label' => 'SPA',
         ],
         'cnr' => [
@@ -33,6 +36,7 @@ return [
             'html_lang' => 'sr-ME',
             'hreflang' => 'sr-ME',
             'og_locale' => 'sr_ME',
+            'accept' => ['cnr', 'sr', 'bs', 'hr', 'sh'],
             'label' => 'CNR',
         ],
     ],

@@ -3,20 +3,16 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/partials/headers.php';
+require_once __DIR__ . '/partials/helpers.php';
 
 send_security_headers([
     'cache_control' => 'no-store',
 ]);
 
-$routes = [
-    'eng' => '/eng/',
-    'rus' => '/rus/',
-    'spa' => '/spa/',
-    'cnr' => '/cnr/',
-];
+$locales = locale_data()['items'];
 
 $lang = $_GET['lang'] ?? '';
-if (!is_string($lang) || !isset($routes[$lang])) {
+if (!is_string($lang) || !isset($locales[$lang])) {
     http_response_code(400);
     header('Content-Type: text/plain; charset=UTF-8');
     echo 'Invalid language.';
@@ -24,18 +20,12 @@ if (!is_string($lang) || !isset($routes[$lang])) {
 }
 
 $return = $_GET['return'] ?? '';
-$target = $routes[$lang];
-if (is_string($return) && $return === $target) {
-    $target = $return;
-}
-
-$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-    || (($_SERVER['SERVER_PORT'] ?? null) === '443');
+$target = locale_redirect_target($lang, $locales, is_string($return) ? $return : null) ?? '/eng/';
 
 setcookie('lang', $lang, [
     'expires' => time() + 365 * 24 * 60 * 60,
     'path' => '/',
-    'secure' => $isHttps,
+    'secure' => request_is_https(),
     'httponly' => true,
     'samesite' => 'Lax',
 ]);
