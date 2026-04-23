@@ -1,34 +1,21 @@
-# dependencies (bun install)
-node_modules
+# macOS
+.DS_Store
 
-# output
-out
-dist
-*.tgz
+# editors
+.idea/
+.vscode/
+*.swp
 
-# code coverage
-coverage
-*.lcov
+# PHP dependencies
+vendor/
 
-# logs
-logs
-_.log
-report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
-
-# dotenv environment variable files
+# environment files
 .env
-.env.development.local
-.env.test.local
-.env.production.local
 .env.local
 
-# caches
-.eslintcache
-.cache
-*.tsbuildinfo
+# logs
+*.log
 
-# IntelliJ based IDEs
-.idea
-
-# Finder (MacOS) folder config
-.DS_Store
+# temporary
+*.md
+!README.md
