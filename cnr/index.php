@@ -14,7 +14,7 @@ send_security_headers([
 
 $localeData = require __DIR__ . '/../partials/data/locales.php';
 $locales = $localeData['items'];
-$localeOrder = $localeData['order'];
+$localeOrder = locale_menu_order($locale, $localeData['order']);
 $alternateLocaleOrder = $localeData['alternate_order'];
 $defaultLocale = $localeData['default'];
 $fundData = require __DIR__ . '/../partials/data/fund.php';

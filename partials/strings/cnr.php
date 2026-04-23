@@ -160,11 +160,11 @@ return [
             ],
             'book2' => [
                 'title' => 'Knjiga "ANKAP"',
-                'body' => 'Bespovijatni kredit za štampanje izdanja knjige o Ankapu.',
+                'body' => 'Beskamatni kredit za štampanje izdanja knjige o Ankapu.',
             ],
             'merch' => [
-                'title' => 'Roba',
-                'body' => 'Bespovijatni kredit za proizvodnju Montelibero robe.',
+                'title' => 'Suveniri',
+                'body' => 'Beskamatni kredit za proizvodnju Montelibero suvenira.',
             ],
             'libertycon' => [
                 'title' => 'LibertyCon',
@@ -192,7 +192,7 @@ return [
         'reports_suffix' => '.',
         'legal_heading' => 'Pravno',
         'legal_body' => 'NVO. Namjenske donacije. Transparentno izvještavanje.',
-        'made_prefix' => 'Napravili s ljubavlju za ',
+        'made_prefix' => 'Napravljeno s ljubavlju za ',
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
     ],

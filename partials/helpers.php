@@ -23,6 +23,21 @@ if (!function_exists('locale_setter_href')) {
     }
 }
 
+if (!function_exists('locale_menu_order')) {
+    function locale_menu_order(string $currentLocale, array $order): array
+    {
+        $result = [$currentLocale];
+
+        foreach (array_values(array_unique($order)) as $localeCode) {
+            if ($localeCode !== $currentLocale) {
+                $result[] = $localeCode;
+            }
+        }
+
+        return $result;
+    }
+}
+
 if (!function_exists('format_local_date')) {
     function format_local_date(string $ymd, string $locale): string
     {

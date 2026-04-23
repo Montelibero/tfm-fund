@@ -151,7 +151,7 @@ return [
                 'body' => 'Patrocinio de la publicación del libro «Fundamentos de las criptomonedas» en idioma montenegrino.',
             ],
             'fpc' => [
-                'title' => 'Traducción de la libro "Free private cities" al montenegrino',
+                'title' => 'Traducción del libro "Free private cities" al montenegrino',
                 'body' => 'Traducción y impresión de la traducción montenegrina del libro "Free private cities" de Titus Gebel.',
             ],
             'liol' => [
