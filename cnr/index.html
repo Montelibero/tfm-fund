@@ -30,10 +30,10 @@
         <input type="checkbox" id="lang-toggle-cnr" class="lang__cb" aria-hidden="true">
         <label for="lang-toggle-cnr" class="lang__summary" aria-label="Jezik">CNR</label>
         <div class="lang__list" role="menu">
-          <a data-lang="rus" href="../rus/" role="menuitem">RUS</a>
-          <a data-lang="cnr" href="../cnr/" aria-current="true" role="menuitem">CNR</a>
-          <a data-lang="spa" href="../spa/" role="menuitem">SPA</a>
-          <a data-lang="eng" href="../eng/" role="menuitem">ENG</a>
+          <a href="../set-lang.php?lang=rus&amp;return=%2Frus%2F" role="menuitem">RUS</a>
+          <a href="../set-lang.php?lang=cnr&amp;return=%2Fcnr%2F" aria-current="true" role="menuitem">CNR</a>
+          <a href="../set-lang.php?lang=spa&amp;return=%2Fspa%2F" role="menuitem">SPA</a>
+          <a href="../set-lang.php?lang=eng&amp;return=%2Feng%2F" role="menuitem">ENG</a>
         </div>
       </div>
     </div>
@@ -239,16 +239,5 @@
       <p class="made">Napravili s ljubavlju za <a href="https://montelibero.org/" target="_blank" rel="noopener">Montelibero</a><img src="../media/logo-mtl.svg" alt="Montelibero"></p>
     </div>
   </footer>
-
-  <script>
-  (function(){
-    function setCookie(name, value, days){
-      var d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
-      document.cookie = name + '=' + encodeURIComponent(value) + '; path=/; SameSite=Lax; expires=' + d.toUTCString();
-    }
-    var links = document.querySelectorAll('.lang a[data-lang]');
-    links.forEach(function(a){ a.addEventListener('click', function(){ setCookie('lang', a.dataset.lang, 365); }); });
-  })();
-  </script>
 </body>
 </html>
