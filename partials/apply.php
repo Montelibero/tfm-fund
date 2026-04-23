@@ -8,12 +8,12 @@
         <div class="card section-card">
           <h3><?= e($t['apply']['private']['title']) ?></h3>
           <p><?= e($t['apply']['private']['body']) ?></p>
-          <a class="btn btn--brand" href="<?= e($fundData['links']['contact_bot']) ?>" target="_blank" rel="noopener"><?= e($t['apply']['private']['cta']) ?></a>
+          <a class="btn btn--brand" href="<?= e($fundData['links']['contact_bot']) ?>" target="_blank" rel="noopener noreferrer"><?= e($t['apply']['private']['cta']) ?></a>
         </div>
         <div class="card section-card">
           <h3><?= e($t['apply']['public']['title']) ?></h3>
           <p><?= e($t['apply']['public']['body']) ?></p>
-          <a class="btn btn--brand" href="<?= e($fundData['links']['public_chat']) ?>" target="_blank" rel="noopener"><?= e($t['apply']['public']['cta']) ?></a>
+          <a class="btn btn--brand" href="<?= e($fundData['links']['public_chat']) ?>" target="_blank" rel="noopener noreferrer"><?= e($t['apply']['public']['cta']) ?></a>
         </div>
       </div>
 

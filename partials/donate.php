@@ -48,7 +48,7 @@
       </div>
 
       <div class="donation-info">
-        <a class="btn btn--brand" href="<?= e($stellarInfoHref) ?>" target="_blank" rel="noopener"><?= e($t['donate']['stellar_info_label']) ?></a>
+        <a class="btn btn--brand" href="<?= e($stellarInfoHref) ?>" target="_blank" rel="noopener noreferrer"><?= e($t['donate']['stellar_info_label']) ?></a>
       </div>
     </div>
   </section>

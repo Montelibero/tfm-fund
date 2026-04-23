@@ -11,13 +11,13 @@
 <?php if ($hasDate): ?>
           <time datetime="<?= e($report['date']) ?>"><?= e(format_local_date($report['date'], $locale)) ?></time>
 <?php endif; ?>
-          <a href="<?= e($report['href']) ?>" target="_blank" rel="noopener"><?= e($reportItem) ?></a>
+          <a href="<?= e($report['href']) ?>" target="_blank" rel="noopener noreferrer"><?= e($reportItem) ?></a>
         </li>
 <?php endforeach; ?>
       </ul>
 
       <div class="section-actions">
-        <a class="btn btn--brand" href="<?= e($fundData['links']['reports']) ?>" target="_blank" rel="noopener"><?= e($t['reports']['cta']) ?></a>
+        <a class="btn btn--brand" href="<?= e($fundData['links']['reports']) ?>" target="_blank" rel="noopener noreferrer"><?= e($t['reports']['cta']) ?></a>
       </div>
     </div>
   </section>

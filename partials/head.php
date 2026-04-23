@@ -23,6 +23,7 @@ $organizationJsonLd = [
   <title><?= e($t['meta']['title']) ?></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="<?= e($t['meta']['description']) ?>">
+  <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#dbb544">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="<?= e($t['header']['brand']) ?>">
