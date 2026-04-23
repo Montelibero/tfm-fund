@@ -17,6 +17,7 @@ return [
         'brand' => 'Tercer Fondo Montelibero',
         'nav_aria_label' => 'Principal',
         'lang_aria_label' => 'Idioma',
+        'menu_label' => 'Menú',
         'skip_link' => 'Saltar al contenido',
         'nav' => [
             'about' => 'Sobre el fondo',

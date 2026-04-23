@@ -17,6 +17,7 @@ return [
         'brand' => 'Third Fund Montelibero',
         'nav_aria_label' => 'Primary',
         'lang_aria_label' => 'Language',
+        'menu_label' => 'Menu',
         'skip_link' => 'Skip to content',
         'nav' => [
             'about' => 'About',

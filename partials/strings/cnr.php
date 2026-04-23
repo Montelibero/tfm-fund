@@ -17,6 +17,7 @@ return [
         'brand' => 'Treći fond Montelibero',
         'nav_aria_label' => 'Navigacija',
         'lang_aria_label' => 'Jezik',
+        'menu_label' => 'Meni',
         'skip_link' => 'Preskoči na sadržaj',
         'nav' => [
             'about' => 'O fondu',
