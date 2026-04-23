@@ -1,3 +1,4 @@
+<a class="skip" href="#main"><?= e($t['header']['skip_link']) ?></a>
 <header class="header">
   <div class="container nav">
     <a class="nav__brand" href="../">

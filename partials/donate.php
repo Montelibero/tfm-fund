@@ -10,7 +10,8 @@
           <p><?= e($t['donate']['methods']['mtl']['body']) ?></p>
           <form class="donation-custom" action="/donate.php" method="get" aria-label="<?= e($t['donate']['methods']['mtl']['form_label']) ?>">
             <input type="hidden" name="method" value="mtl">
-            <input type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
+            <label class="sr-only" for="amount-mtl"><?= e($t['donate']['amount_label']) ?></label>
+            <input id="amount-mtl" type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
             <button type="submit"><?= e($t['shared']['custom_amount']) ?></button>
           </form>
         </div>
@@ -20,7 +21,8 @@
           <p><?= e($t['donate']['methods']['stellar']['body']) ?></p>
           <form class="donation-custom" action="/donate.php" method="get" aria-label="<?= e($t['donate']['methods']['stellar']['form_label']) ?>">
             <input type="hidden" name="method" value="stellar">
-            <input type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
+            <label class="sr-only" for="amount-stellar"><?= e($t['donate']['amount_label']) ?></label>
+            <input id="amount-stellar" type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
             <button type="submit"><?= e($t['shared']['custom_amount']) ?></button>
           </form>
         </div>

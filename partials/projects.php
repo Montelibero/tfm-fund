@@ -5,12 +5,14 @@
 <?php foreach ($projects as $project): ?>
 <?php $item = $t['projects']['items'][$project['id']]; ?>
         <article class="project">
-          <img src="../media/<?= e($project['image']) ?>" alt="">
-          <a class="project_more" href="<?= e($project['href']) ?>" aria-label="<?= e($t['shared']['learn_more']) ?>"></a>
-          <div class="project_body">
-            <h4><?= e($item['title']) ?></h4>
-            <p><?= e($item['body']) ?></p>
-          </div>
+          <a class="project_more" href="<?= e($project['href']) ?>">
+            <img src="../media/<?= e($project['image']) ?>" alt="">
+            <div class="project_body">
+              <h4><?= e($item['title']) ?></h4>
+              <p><?= e($item['body']) ?></p>
+              <span class="project_more__label"><?= e($t['shared']['details']) ?></span>
+            </div>
+          </a>
         </article>
 <?php endforeach; ?>
       </div>

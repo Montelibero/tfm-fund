@@ -10,12 +10,14 @@ return [
     'shared' => [
         'donate' => 'Пожертвовать',
         'custom_amount' => 'Задать сумму',
+        'details' => 'Подробнее',
         'learn_more' => 'Узнать подробнее',
     ],
     'header' => [
         'brand' => 'Третий фонд Монтелиберо',
         'nav_aria_label' => 'Главная навигация',
         'lang_aria_label' => 'Выбор языка',
+        'skip_link' => 'Перейти к содержимому',
         'nav' => [
             'about' => 'О фонде',
             'how' => 'Как это работает',
@@ -110,6 +112,7 @@ return [
     'donate' => [
         'heading' => 'Сделать пожертвование',
         'lead' => 'Вы можете поддержать фонд сделав перевод любой суммы в EURMTL, USDM или SATSMTL на счет для пожертвований в блокчейне Stellar.',
+        'amount_label' => 'Сумма в EURMTL',
         'amount_placeholder' => 'Сумма, EURMTL',
         'methods' => [
             'mtl' => [

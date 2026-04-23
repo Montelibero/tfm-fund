@@ -10,12 +10,14 @@ return [
     'shared' => [
         'donate' => 'Donar',
         'custom_amount' => 'Introducir monto',
+        'details' => 'Detalles',
         'learn_more' => 'Más información',
     ],
     'header' => [
         'brand' => 'Tercer Fondo Montelibero',
         'nav_aria_label' => 'Principal',
         'lang_aria_label' => 'Idioma',
+        'skip_link' => 'Saltar al contenido',
         'nav' => [
             'about' => 'Sobre el fondo',
             'how' => 'Cómo funciona',
@@ -110,6 +112,7 @@ return [
     'donate' => [
         'heading' => 'Hacer una donación',
         'lead' => 'Puede apoyar el fondo transfiriendo cualquier cantidad en EURMTL, USDM o SATSMTL a la cuenta de donaciones en la cadena de bloques Stellar.',
+        'amount_label' => 'Monto en EURMTL',
         'amount_placeholder' => 'Monto, EURMTL',
         'methods' => [
             'mtl' => [

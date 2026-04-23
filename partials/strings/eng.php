@@ -10,12 +10,14 @@ return [
     'shared' => [
         'donate' => 'Donate',
         'custom_amount' => 'Custom amount',
+        'details' => 'Details',
         'learn_more' => 'Learn more',
     ],
     'header' => [
         'brand' => 'Third Fund Montelibero',
         'nav_aria_label' => 'Primary',
         'lang_aria_label' => 'Language',
+        'skip_link' => 'Skip to content',
         'nav' => [
             'about' => 'About',
             'how' => 'How it works',
@@ -110,6 +112,7 @@ return [
     'donate' => [
         'heading' => 'Donate',
         'lead' => 'You can support the fund by transferring any amount in EURMTL, USDM, or SATSMTL to the donation account on the Stellar blockchain.',
+        'amount_label' => 'Amount in EURMTL',
         'amount_placeholder' => 'Amount, EURMTL',
         'methods' => [
             'mtl' => [

@@ -10,12 +10,14 @@ return [
     'shared' => [
         'donate' => 'Doniraj',
         'custom_amount' => 'Vaš iznos',
+        'details' => 'Detalji',
         'learn_more' => 'Detaljnije',
     ],
     'header' => [
         'brand' => 'Treći fond Montelibero',
         'nav_aria_label' => 'Navigacija',
         'lang_aria_label' => 'Jezik',
+        'skip_link' => 'Preskoči na sadržaj',
         'nav' => [
             'about' => 'O fondu',
             'how' => 'Kako funkcioniše',
@@ -110,6 +112,7 @@ return [
     'donate' => [
         'heading' => 'Donacije',
         'lead' => 'Možete podržati fond prebacivanjem bilo kojeg iznosa u EURMTL, USDM ili SATSMTL na račun za donacije na Stellar blockchainu.',
+        'amount_label' => 'Iznos u EURMTL',
         'amount_placeholder' => 'Iznos, EURMTL',
         'methods' => [
             'mtl' => [
