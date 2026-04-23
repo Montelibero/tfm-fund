@@ -1,7 +1,7 @@
 <a class="skip" href="#main"><?= e($t['header']['skip_link']) ?></a>
 <header class="header">
   <div class="container nav">
-    <a class="nav__brand" href="../">
+    <a class="nav__brand" href="<?= e($currentLocale['path']) ?>">
       <span class="nav__logo" aria-hidden="true"></span>
       <span class="nav__title"><?= e($t['header']['brand']) ?></span>
     </a>
@@ -22,12 +22,14 @@
         </nav>
       </details>
       <details class="lang">
-        <summary class="lang__summary"><?= e($currentLocale['label']) ?></summary>
-        <ul class="lang__list">
+        <summary class="lang__summary">
+          <span class="sr-only"><?= e($t['header']['lang_aria_label']) ?>: </span><?= e($currentLocale['label']) ?>
+        </summary>
+        <ul class="lang__list" aria-label="<?= e($t['header']['lang_aria_label']) ?>">
 <?php foreach ($localeOrder as $localeCode): ?>
 <?php $switchLocale = $locales[$localeCode]; ?>
           <li>
-            <a href="<?= e(locale_setter_href($localeCode, $switchLocale['path'])) ?>"<?php if ($localeCode === $locale): ?> aria-current="true"<?php endif; ?>><?= e($switchLocale['label']) ?></a>
+            <a href="<?= e(locale_setter_href($localeCode, $switchLocale['path'])) ?>"<?php if ($localeCode === $locale): ?> aria-current="page"<?php endif; ?>><?= e($switchLocale['label']) ?></a>
           </li>
 <?php endforeach; ?>
         </ul>

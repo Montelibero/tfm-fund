@@ -24,18 +24,42 @@ if (!function_exists('absolute_url')) {
 }
 
 if (!function_exists('locale_setter_href')) {
-    function locale_setter_href(string $locale, string $path): string
+    function locale_setter_href(string $locale, string $returnPath): string
     {
-        return '../set-lang.php?lang=' . rawurlencode($locale) . '&return=' . rawurlencode($path);
+        // The header switcher intentionally returns to locale roots only.
+        // PHP never receives the browser fragment, so preserving the current in-page anchor
+        // here would require client-side code we do not want to depend on.
+        return '../set-lang.php?lang=' . rawurlencode($locale) . '&return=' . rawurlencode($returnPath);
+    }
+}
+
+if (!function_exists('ordered_locale_codes')) {
+    function ordered_locale_codes(array $locales, array $order): array
+    {
+        $result = [];
+
+        foreach (array_values(array_unique($order)) as $localeCode) {
+            if (isset($locales[$localeCode])) {
+                $result[] = $localeCode;
+            }
+        }
+
+        foreach (array_keys($locales) as $localeCode) {
+            if (!in_array($localeCode, $result, true)) {
+                $result[] = $localeCode;
+            }
+        }
+
+        return $result;
     }
 }
 
 if (!function_exists('locale_menu_order')) {
-    function locale_menu_order(string $currentLocale, array $order): array
+    function locale_menu_order(string $currentLocale, array $orderedLocaleCodes): array
     {
         $result = [$currentLocale];
 
-        foreach (array_values(array_unique($order)) as $localeCode) {
+        foreach ($orderedLocaleCodes as $localeCode) {
             if ($localeCode !== $currentLocale) {
                 $result[] = $localeCode;
             }

@@ -30,7 +30,7 @@ $organizationJsonLd = [
   <meta property="og:description" content="<?= e($t['meta']['description']) ?>">
   <meta property="og:url" content="<?= e($canonicalUrl) ?>">
   <meta property="og:locale" content="<?= e($currentLocale['og_locale']) ?>">
-<?php foreach ($alternateLocaleOrder as $localeCode): ?>
+<?php foreach ($localeCodes as $localeCode): ?>
 <?php if ($localeCode === $locale) { continue; } ?>
 <?php $altLocale = $locales[$localeCode]; ?>
   <meta property="og:locale:alternate" content="<?= e($altLocale['og_locale']) ?>">
@@ -50,9 +50,9 @@ $organizationJsonLd = [
   <link rel="manifest" href="../site.webmanifest">
   <link rel="stylesheet" href="../style.css">
   <script src="../assets/copy.js" defer></script>
-<?php foreach ($alternateLocaleOrder as $localeCode): ?>
+<?php foreach ($localeCodes as $localeCode): ?>
 <?php $altLocale = $locales[$localeCode]; ?>
-  <link rel="alternate" hreflang="<?= e($altLocale['html_lang']) ?>" href="<?= e(absolute_url($altLocale['path'])) ?>">
+  <link rel="alternate" hreflang="<?= e($altLocale['hreflang']) ?>" href="<?= e(absolute_url($altLocale['path'])) ?>">
 <?php endforeach; ?>
   <link rel="alternate" hreflang="x-default" href="<?= e(absolute_url($locales[$defaultLocale]['path'])) ?>">
   <script type="application/ld+json"><?= json_encode($organizationJsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
