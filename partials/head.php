@@ -5,6 +5,7 @@
   <meta name="description" content="<?= e($t['meta']['description']) ?>">
   <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
   <link rel="stylesheet" href="../style.css">
+  <script src="../assets/copy.js" defer></script>
 <?php foreach ($alternateLocaleOrder as $localeCode): ?>
 <?php $altLocale = $locales[$localeCode]; ?>
   <link rel="alternate" hreflang="<?= e($altLocale['html_lang']) ?>" href="<?= e($altLocale['path']) ?>">

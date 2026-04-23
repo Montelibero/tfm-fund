@@ -31,9 +31,19 @@
           <h3><?= e($t['donate']['methods']['direct']['title']) ?></h3>
           <p><?= e($t['donate']['methods']['direct']['body']) ?></p>
           <div class="wallet-address">
-            <code class="address-text"><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></code>
+            <button
+              type="button"
+              class="address-text"
+              data-copy="<?= e(STELLAR_TFM_DONATION_ACCOUNT) ?>"
+              data-copy-success="<?= e($t['donate']['methods']['direct']['copied']) ?>"
+              data-copy-status-id="wallet-copy-status"
+              aria-describedby="wallet-copy-note wallet-copy-status"
+            >
+              <code><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></code>
+            </button>
           </div>
-          <p class="donation-note"><?= e($t['donate']['methods']['direct']['note']) ?></p>
+          <p class="donation-note" id="wallet-copy-note"><?= e($t['donate']['methods']['direct']['note']) ?></p>
+          <p class="donation-toast" id="wallet-copy-status" aria-live="polite" hidden></p>
         </div>
       </div>
 

@@ -129,7 +129,8 @@ return [
             'direct' => [
                 'title' => 'Or direct transfer',
                 'body' => 'Use any Stellar wallet to transfer EURMTL to the fund address.',
-                'note' => 'Click on the address to copy',
+                'note' => 'Tap and hold / Ctrl+C to copy',
+                'copied' => 'Copied',
             ],
         ],
         'stellar_info_label' => 'What is Stellar?',

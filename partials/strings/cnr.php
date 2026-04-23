@@ -129,7 +129,8 @@ return [
             'direct' => [
                 'title' => 'Ili direktnim transferom',
                 'body' => 'Koristite bilo koji Stellar novčanik za prenos EURMTL na adresu fondacije.',
-                'note' => 'Kliknite na adresu za kopiranje',
+                'note' => 'Zadržite pritisak ili koristite Ctrl+C za kopiranje',
+                'copied' => 'Kopirano',
             ],
         ],
         'stellar_info_label' => 'Šta je Stellar?',

@@ -129,7 +129,8 @@ return [
             'direct' => [
                 'title' => 'O transferencia directa',
                 'body' => 'Utilice cualquier monedero Stellar para transferir tokens a la dirección del TFM.',
-                'note' => 'Haga clic en la dirección para copiarla',
+                'note' => 'Mantenga pulsado o use Ctrl+C para copiar',
+                'copied' => 'Copiado',
             ],
         ],
         'stellar_info_label' => '¿Qué es Stellar?',

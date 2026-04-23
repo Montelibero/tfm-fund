@@ -499,16 +499,39 @@ body{
   display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
 }
 .address-text{
-  flex: 1; background: #f8f8f8; border: 1px solid var(--line);
-  border-radius: 8px; padding: 12px; font-family: monospace;
-  font-size: 14px; color: var(--fg); word-break: break-all;
-  cursor: pointer; user-select: all; transition: all var(--transition-fast);
+  display:block;
+  width:100%;
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8f8f8;
+  color: var(--fg);
+  font-family: monospace;
+  font-size: 14px;
+  text-align:left;
+  word-break: break-all;
+  user-select: all;
+  -webkit-user-select: all;
+  appearance: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.address-text code{
+  font: inherit;
+  background: transparent;
 }
 .address-text:hover{
   background: #f0f0f0; border-color: var(--brand);
 }
 .donation-note{
   margin: 8px 0 0; font-size: 14px; color: var(--muted);
+}
+.donation-toast{
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-ink);
 }
 .donation-info{
   margin-top: 24px; text-align: center;
