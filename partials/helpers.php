@@ -16,6 +16,13 @@ if (!function_exists('wiki_ru')) {
     }
 }
 
+if (!function_exists('absolute_url')) {
+    function absolute_url(string $path): string
+    {
+        return rtrim(SITE_URL, '/') . '/' . ltrim($path, '/');
+    }
+}
+
 if (!function_exists('locale_setter_href')) {
     function locale_setter_href(string $locale, string $path): string
     {
