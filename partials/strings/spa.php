@@ -61,9 +61,51 @@ return [
             ],
         ],
     ],
+    'apply' => [
+        'heading' => 'Solicitar una subvención',
+        'lead' => 'Cualquier persona puede proponer un proyecto o una idea que necesite apoyo. No es necesario ser miembro de Montelibero para solicitar ayuda al fondo.',
+        'quote' => 'Si un proyecto ayuda al desarrollo, la promoción o el crecimiento del movimiento Montelibero, el fondo puede considerarlo.',
+        'private' => [
+            'title' => 'Escribir al Consejo en privado',
+            'body' => 'Utilice el bot de contacto del Consejo si quiere comentar una propuesta en privado o comprobar si la idea encaja con los objetivos del fondo.',
+            'cta' => 'Escribir al bot del Consejo',
+        ],
+        'public' => [
+            'title' => 'Proponerlo en público',
+            'body' => 'El chat público de Telegram es la forma más rápida de recibir comentarios, encontrar apoyo y mejorar una propuesta de subvención.',
+            'cta' => 'Abrir el chat público',
+        ],
+        'note' => 'El fondo concede subvenciones, pero la administración del proyecto sigue siendo responsabilidad del proponente. Si está listo para coordinar un proyecto, ese trabajo también puede financiarse.',
+    ],
     'council' => [
         'heading' => 'Consejo del fondo',
-        'body' => 'El Consejo está compuesto por los mayores donantes del fondo. El número de miembros del Consejo está limitado a 10 personas. Las decisiones se toman de forma colegiada. La composición actual del Consejo y el Estatuto del TFM están disponibles públicamente.',
+        'lead' => 'El fondo está gobernado por sus mayores donantes activos. El Consejo tiene hasta 10 miembros y la cuenta principal se controla mediante multifirma, no por una sola persona.',
+        'body' => 'Los pesos de voto de la multifirma se recalculan según las donaciones recientes y las delegaciones. Para aprobar transacciones y decisiones se necesita un umbral cualificado, lo que mantiene el control colectivo y transparente.',
+        'links' => [
+            'multisig' => [
+                'title' => 'Cuenta principal multifirma',
+                'body' => 'Consulte la cuenta principal de Stellar controlada por el Consejo y su actividad pública en el explorador.',
+                'cta' => 'Abrir la cuenta multifirma',
+            ],
+            'charter' => [
+                'title' => 'Estatuto del fondo',
+                'body' => 'Lea el estatuto que define los objetivos del fondo, el estatus de los donantes, los criterios del Consejo y las reglas de votación.',
+                'cta' => 'Leer el estatuto',
+            ],
+        ],
+    ],
+    'reports' => [
+        'heading' => 'Informes y subvenciones recientes',
+        'lead' => 'Las decisiones públicas y el historial de subvenciones se mantienen de forma abierta. A continuación figuran las últimas subvenciones completadas que hoy aparecen en el registro público del fondo.',
+        'updated_label' => 'Actualizado',
+        'cta' => 'Abrir el registro público completo',
+        'items' => [
+            'munich' => 'Financiación parcial del viaje de un representante de MTLA a la conferencia de Múnich',
+            'speech' => 'Patrocinio del concurso de ensayos "Part of Speech"',
+            'crypto_book' => 'Patrocinio de la edición montenegrina de "Fundamentals of Cryptocurrencies"',
+            'porcfest' => 'Patrocinio de la representación de Montelibero en Porcupine Freedom Festival 2025',
+            'liberty_conf' => 'Patrocinio de la conferencia II Liberty Conf en Tiflis',
+        ],
     ],
     'donate' => [
         'heading' => 'Hacer una donación',

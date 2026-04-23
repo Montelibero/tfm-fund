@@ -17,6 +17,7 @@ $locales = $localeData['items'];
 $localeOrder = $localeData['order'];
 $alternateLocaleOrder = $localeData['alternate_order'];
 $defaultLocale = $localeData['default'];
+$fundData = require __DIR__ . '/../partials/data/fund.php';
 $projects = require __DIR__ . '/../partials/data/projects.php';
 $t = require __DIR__ . '/../partials/strings/rus.php';
 

@@ -119,6 +119,95 @@ body{
 .card h3{ margin:0 0 8px; font-size:18px; }
 .card p{ margin:0; color: var(--muted); }
 
+.cards--two{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.section__lead{
+  max-width: 72ch;
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.section__quote{
+  margin: 0 0 20px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--brand);
+  border-radius: 0 12px 12px 0;
+  background: rgba(219,181,68,0.08);
+  color: var(--brand-ink);
+  font-weight: 600;
+}
+
+.section__copy{
+  max-width: 76ch;
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.section__note,
+.section__meta{
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section-card{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-card .btn{
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.report-list{
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--rad);
+  overflow: hidden;
+  background: #fff;
+}
+
+.report-item{
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  padding: 14px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.report-item--dated{
+  grid-template-columns: 180px 1fr;
+}
+
+.report-item:first-child{
+  border-top: 0;
+}
+
+.report-item time{
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.report-item a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.report-item a:hover{
+  text-decoration: underline;
+}
+
+.section-actions{
+  margin-top: 20px;
+}
+
 /* Projects */
 .projects{
   display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
@@ -325,13 +414,16 @@ select:focus-visible{
 @media (max-width: 920px){
   .hero__grid{ grid-template-columns: 1fr; }
   .cards, .projects{ grid-template-columns: 1fr 1fr; }
+  .cards--two{ grid-template-columns: 1fr 1fr; }
   .footer__grid{ grid-template-columns: 1fr; }
   .donation-methods{ grid-template-columns: 1fr; }
   .donation-buttons{ grid-template-columns: repeat(2, 1fr); }
+  .report-item--dated{ grid-template-columns: 150px 1fr; }
 }
 @media (max-width: 560px){
   .menu{ display:none; }
   .cards, .projects{ grid-template-columns: 1fr; }
+  .cards--two{ grid-template-columns: 1fr; }
   .hero .container{ padding-left: 20px; padding-right: 20px; }
   .header .container{ padding-left: calc(20px + env(safe-area-inset-left)); padding-right: calc(20px + env(safe-area-inset-right)); }
   .hero__grid{ padding: 20px 0 16px; gap: 16px; }
@@ -344,6 +436,10 @@ select:focus-visible{
   .lang > a{ display:none; }
   .lang__summary{ display:inline-flex; margin-left:auto; font-size: 14px; padding:4px 8px; }
   .lang__list a{ font-size: 14px; }
+  .section__lead{ font-size: 16px; }
+  .section__quote{ padding: 14px 16px; }
+  .report-item{ gap: 6px; }
+  .report-item--dated{ grid-template-columns: 1fr; }
 }
 
 /* Custom amount forms */

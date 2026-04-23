@@ -61,9 +61,51 @@ return [
             ],
         ],
     ],
+    'apply' => [
+        'heading' => 'Zatražite grant',
+        'lead' => 'Svaka osoba može predložiti projekat ili ideju kojoj je potrebna podrška. Ne morate biti član Montelibera da biste tražili pomoć fonda.',
+        'quote' => 'Ako projekat pomaže razvoju, promociji ili rastu pokreta Montelibero, fond ga može uzeti u razmatranje.',
+        'private' => [
+            'title' => 'Pišite Savjetu privatno',
+            'body' => 'Koristite bot za povratne informacije Savjeta ako želite da privatno razgovarate o prijedlogu ili provjerite da li se ideja uklapa u ciljeve fonda.',
+            'cta' => 'Pišite botu Savjeta',
+        ],
+        'public' => [
+            'title' => 'Predložite ga javno',
+            'body' => 'Javni Telegram chat je najbrži način da dobijete povratne informacije, pronađete podršku i doradite prijavu za grant.',
+            'cta' => 'Otvori javni chat',
+        ],
+        'note' => 'Fond dodjeljuje grantove, ali administracija projekta ostaje na predlagaču. Ako ste spremni da koordinirate projekat, i taj rad može biti finansiran.',
+    ],
     'council' => [
         'heading' => 'Savjet fonda',
-        'body' => 'Vijeće se sastoji od najvećih donatora Fondacije. Članstvo u Savjetu je ograničeno na 10 osoba. Odluke se donose kolektivno. Trenutni sastav Savjeta i Povelja Fondacije su javno dostupni.',
+        'lead' => 'Fondom upravljaju njegovi najveći aktivni donatori. Savjet ima do 10 članova, a glavni račun kontroliše multisig, ne jedna osoba.',
+        'body' => 'Težine glasova u multisigu se preračunavaju prema svježim donacijama i delegacijama. Za potvrdu transakcija i odluka potreban je kvalifikovani prag, što upravljanje čini kolektivnim i transparentnim.',
+        'links' => [
+            'multisig' => [
+                'title' => 'Glavni multisig račun',
+                'body' => 'Pogledajte glavni Stellar račun kojim upravlja Savjet i njegovu javnu istoriju aktivnosti u exploreru.',
+                'cta' => 'Otvori multisig račun',
+            ],
+            'charter' => [
+                'title' => 'Povelja fonda',
+                'body' => 'Pročitajte povelju koja definiše ciljeve fonda, status donatora, kriterijume Savjeta i pravila glasanja.',
+                'cta' => 'Pročitaj povelju',
+            ],
+        ],
+    ],
+    'reports' => [
+        'heading' => 'Izvještaji i najnoviji grantovi',
+        'lead' => 'Javne odluke i istorija grantova vode se otvoreno. Ispod su najnoviji završeni grantovi koji su sada navedeni u javnoj evidenciji fonda.',
+        'updated_label' => 'Ažurirano',
+        'cta' => 'Otvori kompletnu javnu evidenciju',
+        'items' => [
+            'munich' => 'Djelimično finansiranje puta predstavnika MTLA na konferenciju u Minhenu',
+            'speech' => 'Sponzorstvo konkursa eseja "Part of Speech"',
+            'crypto_book' => 'Sponzorstvo crnogorskog izdanja knjige "Fundamentals of Cryptocurrencies"',
+            'porcfest' => 'Sponzorstvo predstavljanja Montelibera na Porcupine Freedom Festival 2025',
+            'liberty_conf' => 'Sponzorstvo konferencije II Liberty Conf u Tbilisiju',
+        ],
     ],
     'donate' => [
         'heading' => 'Donacije',

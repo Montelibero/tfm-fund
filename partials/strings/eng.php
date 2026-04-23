@@ -61,9 +61,51 @@ return [
             ],
         ],
     ],
+    'apply' => [
+        'heading' => 'Apply for a grant',
+        'lead' => 'Anyone can propose a project or idea that needs support. You do not need to be a Montelibero member to ask the fund for help.',
+        'quote' => 'If a project helps develop, promote, or grow the Montelibero movement, the fund can consider it.',
+        'private' => [
+            'title' => 'Private request to the Council',
+            'body' => 'Use the Council feedback bot if you want to discuss a proposal privately or check whether an idea fits the fund goals.',
+            'cta' => 'Write to the Council bot',
+        ],
+        'public' => [
+            'title' => 'Propose it in public',
+            'body' => 'Open discussion in the public Telegram chat is the fastest way to get feedback, find supporters, and refine a grant idea.',
+            'cta' => 'Open the public chat',
+        ],
+        'note' => 'The fund provides grants, but project administration remains with the proposer. If you are ready to curate a project, that work can also be funded.',
+    ],
     'council' => [
         'heading' => 'Fund Council',
-        'body' => "The Council consists of the fund's largest donors. The number of Council members is limited to 10 people. Decisions are made collectively. The current composition of the Council and the TFM Charter are publicly available.",
+        'lead' => 'The fund is governed by its largest active donors. The Council has up to 10 members, and the main account is controlled by multisignature rather than by one person.',
+        'body' => 'Weights in the multisignature are recalculated from recent donations and delegations. Approving transactions and decisions requires a qualified threshold, which keeps the fund collective and transparent.',
+        'links' => [
+            'multisig' => [
+                'title' => 'Main multisig account',
+                'body' => 'Inspect the Council-controlled main Stellar account and its public activity on the block explorer.',
+                'cta' => 'Open the multisig account',
+            ],
+            'charter' => [
+                'title' => 'Fund Charter',
+                'body' => 'Read the charter that defines the fund goals, donor status, Council criteria, and voting rules.',
+                'cta' => 'Read the charter',
+            ],
+        ],
+    ],
+    'reports' => [
+        'heading' => 'Reports and recent grants',
+        'lead' => 'Public decisions and grant history are maintained openly. Below are the latest completed grants currently listed in the public fund record.',
+        'updated_label' => 'Updated',
+        'cta' => 'Open the full public record',
+        'items' => [
+            'munich' => 'Partial funding of an MTLA representative trip to the Munich conference',
+            'speech' => 'Sponsorship of the "Part of Speech" essay contest',
+            'crypto_book' => 'Sponsorship of the Montenegrin edition of "Fundamentals of Cryptocurrencies"',
+            'porcfest' => 'Sponsorship of Montelibero representation at Porcupine Freedom Festival 2025',
+            'liberty_conf' => 'Sponsorship of the II Liberty Conf conference in Tbilisi',
+        ],
     ],
     'donate' => [
         'heading' => 'Donate',

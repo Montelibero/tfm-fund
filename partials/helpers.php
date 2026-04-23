@@ -22,3 +22,31 @@ if (!function_exists('locale_setter_href')) {
         return '../set-lang.php?lang=' . rawurlencode($locale) . '&return=' . rawurlencode($path);
     }
 }
+
+if (!function_exists('format_local_date')) {
+    function format_local_date(string $ymd, string $locale): string
+    {
+        $date = DateTimeImmutable::createFromFormat('Y-m-d', $ymd);
+        if (!$date) {
+            return $ymd;
+        }
+
+        $months = [
+            'eng' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            'rus' => ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
+            'spa' => ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+            'cnr' => ['januar', 'februar', 'mart', 'april', 'maj', 'jun', 'jul', 'avgust', 'septembar', 'oktobar', 'novembar', 'decembar'],
+        ];
+
+        $monthIndex = (int) $date->format('n') - 1;
+        $monthName = $months[$locale][$monthIndex] ?? $months['eng'][$monthIndex];
+        $day = (int) $date->format('j');
+        $year = $date->format('Y');
+
+        if ($locale === 'eng') {
+            return $monthName . ' ' . $day . ', ' . $year;
+        }
+
+        return $day . ' ' . $monthName . ' ' . $year;
+    }
+}
