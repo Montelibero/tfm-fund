@@ -10,7 +10,14 @@
 
       <ul class="report-list">
 <?php foreach ($fundData['reports'] as $report): ?>
-<?php $reportItem = $t['reports']['items'][$report['id']]; ?>
+<?php
+$reportId = $report['id'] ?? '';
+if (!is_string($reportId) || $reportId === '' || !isset($t['reports']['items'][$reportId])) {
+    error_log('[tfm-fund] Missing or invalid reports.items key: ' . (is_string($reportId) ? $reportId : json_encode($reportId)));
+    continue;
+}
+$reportItem = $t['reports']['items'][$reportId];
+?>
 <?php $hasDate = !empty($report['date']); ?>
         <li class="report-item<?= $hasDate ? ' report-item--dated' : '' ?>">
 <?php if ($hasDate): ?>

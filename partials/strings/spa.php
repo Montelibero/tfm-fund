@@ -22,6 +22,9 @@ return [
         'nav' => [
             'about' => 'Sobre el fondo',
             'how' => 'Cómo funciona',
+            'projects' => 'Proyectos',
+            'apply' => 'Solicitar',
+            'reports' => 'Informes',
             'council' => 'Consejo',
         ],
     ],

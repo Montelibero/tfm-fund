@@ -8,6 +8,9 @@
     <nav class="menu menu--desktop" aria-label="<?= e($t['header']['nav_aria_label']) ?>">
       <a href="#about"><?= e($t['header']['nav']['about']) ?></a>
       <a href="#how"><?= e($t['header']['nav']['how']) ?></a>
+      <a href="#projects"><?= e($t['header']['nav']['projects']) ?></a>
+      <a href="#apply"><?= e($t['header']['nav']['apply']) ?></a>
+      <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
       <a href="#council"><?= e($t['header']['nav']['council']) ?></a>
       <a class="btn btn--brand" href="#donate"><?= e($t['shared']['donate']) ?></a>
     </nav>
@@ -17,6 +20,9 @@
         <nav class="menu-mobile__panel" aria-label="<?= e($t['header']['nav_aria_label']) ?>">
           <a href="#about"><?= e($t['header']['nav']['about']) ?></a>
           <a href="#how"><?= e($t['header']['nav']['how']) ?></a>
+          <a href="#projects"><?= e($t['header']['nav']['projects']) ?></a>
+          <a href="#apply"><?= e($t['header']['nav']['apply']) ?></a>
+          <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
           <a href="#council"><?= e($t['header']['nav']['council']) ?></a>
           <a class="btn btn--brand" href="#donate"><?= e($t['shared']['donate']) ?></a>
         </nav>

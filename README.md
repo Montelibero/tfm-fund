@@ -48,39 +48,54 @@ Then open `http://localhost:8000/`.
 
 ## Add a locale
 
-1. Copy `partials/strings/eng.php` to `partials/strings/xxx.php` (ISO 639-3 lang code) and translate every string.
-2. Create `xxx/index.php` by copying an existing locale entry point such as `eng/index.php`.
-3. Set `$locale = 'xxx';` and include `partials/strings/xxx.php`.
-4. Register the locale in `partials/data/locales.php`.
-   Add `path`, `html_lang`, `og_locale`, and `label`.
-   This file is the shared source for language switcher links and `head.php` `hreflang` / OG locale tags.
-5. Register the locale in the root allowlists:
-   `index.php` for locale negotiation.
-   `set-lang.php` for safe manual switching.
-6. Add `media/og-xxx.jpg` for social sharing.
-7. Update `sitemap.xml` so the new locale is included in sitemap and alternate links.
+1. Copy `partials/strings/eng.php` to `partials/strings/xxx.php` (internal locale code by ISO 639-3, e.g. `eng` / `cnr`) and translate every string.
+2. Create `xxx/index.php` by copying `eng/index.php`. Change only the locale argument, for example:
+   `render_locale_page('xxx');`
+   Routing and negotiation read allowed locales from `partials/data/locales.php`; you do not edit `index.php` or `set-lang.php` lists by hand.
+3. Register the locale in `partials/data/locales.php`: `path`, `html_lang`, `hreflang`, `og_locale`, `accept` aliases, and `label`.
+   This file drives the language switcher, `hreflang`, and Open Graph alternate locales in `partials/head.php`.
+4. Add `media/og-xxx.jpg` for social sharing.
+5. Update `sitemap.xml` so the new locale appears as its own `<url>` and in every `<xhtml:link>` alternate set.
 
-If you add a locale, prefer add it everywhere in one pass. The page structure is shared; only strings and locale metadata should vary.
+If you add a locale, add it everywhere in one pass. The page structure is shared; only strings and locale metadata should vary.
 
-## Add a supported project or grant
+## Add a Supported projects card
 
-One project should be one data record plus translations.
+The **Supported projects** block (`partials/projects.php`) is **not** the same as the short **Reports and recent grants** list; the latter lives in `partials/data/fund.php` (see the next section).
 
-1. Add the project record to `partials/data/projects.php`.
-   Set a stable `id`, image filename, `width`, `height`, and destination `href`.
-2. Add the localized copy for that `id` in all four files:
-   `partials/strings/eng.php`
-   `partials/strings/rus.php`
-   `partials/strings/spa.php`
-   `partials/strings/cnr.php`
-3. Add the image pair to `media/`:
-   `cover-xxx.webp`
-   `cover-xxx.jpeg`
-4. Keep the image dimensions in `partials/data/projects.php` aligned with the actual file.
+For each new card:
 
-The shared project template will render the new card automatically.
+1. Append a record to **`partials/data/projects.php`** (array order = order on the page):
+   - **`id`** — stable key. Must exist under `projects.items` in **all four** `partials/strings/{eng,rus,spa,cnr}.php`, each with **`title`** and **`body`** (card heading and blurb).
+   - **`image`** — JPEG filename in `media/` (e.g. `cover-example.jpeg`). The template builds the WebP path by swapping the extension to `.webp`, so ship **`media/cover-example.webp`** with the same basename.
+   - **`width`**, **`height`** — real pixel dimensions of that image (used for layout and CLS).
+   - **`href`** — URL opened when the visitor follows “Details” / the whole card.
 
-## Image preferencies
+2. Add `projects.items['your-id']` with `title` and `body` in every locale file above.
+
+3. Optimize and commit the **JPEG + WebP** pair under `media/`.
+
+If any locale is missing `projects.items` for an `id`, that card is **omitted** and PHP logs a line (`[tfm-fund] Missing or invalid projects.items key: …`) so incomplete translations are visible in server logs.
+
+## Update Reports and recent grants
+
+The **Reports and recent grants** section (`partials/reports.php`) uses **`partials/data/fund.php`** for structure and links, and **`reports.items`** in each `partials/strings/*.php` for the visible label of each row.
+
+1. In **`partials/data/fund.php`**:
+   - **`updated_date`** — `Y-m-d` string shown beside the section “Updated” label; bump it when you change the list meaningfully.
+   - **`links.reports`** — URL for the main CTA (“Open the full public record” / localized equivalent), usually the public wiki overview for the fund.
+   - **`reports`** — ordered list of entries. Each entry supports:
+     - **`id`** — must match a key in `reports.items` in **all four** locale string files. The value there is a **single string** (the link text), not `title`/`body`.
+     - **`href`** — URL for that row (often a Telegram announcement).
+     - **`date`** (optional) — `Y-m-d`; when present, a `<time>` is rendered before the link.
+
+2. Add or update `reports.items['your-id']` in `eng.php`, `rus.php`, `spa.php`, and `cnr.php` for every `id` you reference.
+
+3. Prefer a consistent ordering (e.g. newest grants first).
+
+If an `id` appears in `fund.php` but is missing from a locale’s `reports.items`, that row is **skipped** and PHP logs (`[tfm-fund] Missing or invalid reports.items key: …`), same behavior as Supported projects.
+
+## Image preferences
 
 - Maximum long edge: `1600px`.
 - Keep every JPEG fallback at `<= 300 KB`.

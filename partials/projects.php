@@ -7,7 +7,14 @@
       </header>
       <div class="projects">
 <?php foreach ($projects as $project): ?>
-<?php $item = $t['projects']['items'][$project['id']]; ?>
+<?php
+$projectId = $project['id'] ?? '';
+if (!is_string($projectId) || $projectId === '' || !isset($t['projects']['items'][$projectId])) {
+    error_log('[tfm-fund] Missing or invalid projects.items key: ' . (is_string($projectId) ? $projectId : json_encode($projectId)));
+    continue;
+}
+$item = $t['projects']['items'][$projectId];
+?>
 <?php $webpImage = preg_replace('/\.jpe?g$/i', '.webp', $project['image']); ?>
         <article class="project">
           <a class="project_more" href="<?= e($project['href']) ?>">

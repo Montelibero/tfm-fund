@@ -53,9 +53,9 @@
     </div>
   </section>
 
+<?php require __DIR__ . '/donate.php'; ?>
+<?php require __DIR__ . '/projects.php'; ?>
 <?php require __DIR__ . '/apply.php'; ?>
 <?php require __DIR__ . '/council.php'; ?>
 <?php require __DIR__ . '/reports.php'; ?>
-<?php require __DIR__ . '/donate.php'; ?>
-<?php require __DIR__ . '/projects.php'; ?>
 </main>

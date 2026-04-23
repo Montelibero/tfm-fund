@@ -22,6 +22,9 @@ return [
         'nav' => [
             'about' => 'O fondu',
             'how' => 'Kako funkcioniše',
+            'projects' => 'Projekti',
+            'apply' => 'Prijava',
+            'reports' => 'Izvještaji',
             'council' => 'Savjet',
         ],
     ],

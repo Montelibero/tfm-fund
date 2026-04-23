@@ -22,6 +22,9 @@ return [
         'nav' => [
             'about' => 'About',
             'how' => 'How it works',
+            'projects' => 'Projects',
+            'apply' => 'Apply',
+            'reports' => 'Reports',
             'council' => 'Council',
         ],
     ],
