@@ -1,0 +1,42 @@
+<?php $stellarInfoHref = wiki_ru('Stellar'); ?>
+  <section id="donate" class="section">
+    <div class="container">
+      <h2><?= e($t['donate']['heading']) ?></h2>
+      <p><?= e($t['donate']['lead']) ?></p>
+
+      <div class="donation-methods">
+        <div class="donation-method">
+          <h3><?= e($t['donate']['methods']['mtl']['title']) ?></h3>
+          <p><?= e($t['donate']['methods']['mtl']['body']) ?></p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="<?= e($t['donate']['methods']['mtl']['form_label']) ?>">
+            <input type="hidden" name="method" value="mtl">
+            <input type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
+            <button type="submit"><?= e($t['shared']['custom_amount']) ?></button>
+          </form>
+        </div>
+
+        <div class="donation-method">
+          <h3><?= e($t['donate']['methods']['stellar']['title']) ?></h3>
+          <p><?= e($t['donate']['methods']['stellar']['body']) ?></p>
+          <form class="donation-custom" action="/donate.php" method="get" aria-label="<?= e($t['donate']['methods']['stellar']['form_label']) ?>">
+            <input type="hidden" name="method" value="stellar">
+            <input type="number" name="amount" min="1" step="1" placeholder="<?= e($t['donate']['amount_placeholder']) ?>" value="10" required>
+            <button type="submit"><?= e($t['shared']['custom_amount']) ?></button>
+          </form>
+        </div>
+
+        <div class="donation-method">
+          <h3><?= e($t['donate']['methods']['direct']['title']) ?></h3>
+          <p><?= e($t['donate']['methods']['direct']['body']) ?></p>
+          <div class="wallet-address">
+            <code class="address-text"><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></code>
+          </div>
+          <p class="donation-note"><?= e($t['donate']['methods']['direct']['note']) ?></p>
+        </div>
+      </div>
+
+      <div class="donation-info">
+        <a class="btn btn--brand" href="<?= e($stellarInfoHref) ?>" target="_blank" rel="noopener"><?= e($t['donate']['stellar_info_label']) ?></a>
+      </div>
+    </div>
+  </section>
