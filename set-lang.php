@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/partials/headers.php';
+
+send_security_headers([
+    'cache_control' => 'no-store',
+]);
+
 $routes = [
     'eng' => '/eng/',
     'rus' => '/rus/',
@@ -34,8 +40,5 @@ setcookie('lang', $lang, [
     'samesite' => 'Lax',
 ]);
 
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer-when-downgrade');
-header('Cache-Control: no-store');
 header('Location: ' . $target, true, 302);
 exit;

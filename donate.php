@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/partials/headers.php';
 
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer');
-header('Cache-Control: no-store');
+send_security_headers([
+  'cache_control' => 'no-store',
+]);
 
 $method = $_GET['method'] ?? '';
 $amount = (string) ($_GET['amount'] ?? '');

@@ -94,6 +94,12 @@ body{
 }
 .hero h1{ font-size: clamp(28px, 4.5vw, 42px); line-height:1.15; margin:0 0 10px; }
 .hero p{ color: var(--muted); margin: 0 0 14px; }
+.hero__actions{ display:flex; gap:10px; }
+.hero__cover{
+  width:100%;
+  border-radius:14px;
+  border:1px solid var(--line);
+}
 
 /* Cardy */
 .cards{

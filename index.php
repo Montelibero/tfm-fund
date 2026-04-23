@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/partials/headers.php';
+
 // Normalize the language code
 function norm(string $code): string {
     $code = strtolower(trim($code));
@@ -47,9 +49,9 @@ if (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], $valid, true)) {
     $target = lang_from_accept($accept);
 }
 
-header('X-Content-Type-Options: nosniff');
-header('Referrer-Policy: no-referrer-when-downgrade');
-header('Cache-Control: no-store');
+send_security_headers([
+    'cache_control' => 'no-store',
+]);
 
 switch ($target) {
     case 'rus': header('Location: ./rus/', true, 302); exit;
