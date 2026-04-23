@@ -1,4 +1,3 @@
-<?php $toggleId = $currentLocale['toggle_id']; ?>
 <header class="header">
   <div class="container nav">
     <a class="nav__brand" href="../">
@@ -11,15 +10,16 @@
       <a href="#council"><?= e($t['header']['nav']['council']) ?></a>
       <a class="btn btn--brand" href="#donate"><?= e($t['shared']['donate']) ?></a>
     </nav>
-    <div class="lang" role="group" aria-label="<?= e($t['header']['lang_aria_label']) ?>">
-      <input type="checkbox" id="<?= e($toggleId) ?>" class="lang__cb" aria-hidden="true">
-      <label for="<?= e($toggleId) ?>" class="lang__summary" aria-label="<?= e($t['header']['lang_aria_label']) ?>"><?= e($currentLocale['label']) ?></label>
-      <div class="lang__list" role="menu">
+    <details class="lang">
+      <summary class="lang__summary"><?= e($currentLocale['label']) ?></summary>
+      <ul class="lang__list">
 <?php foreach ($localeOrder as $localeCode): ?>
 <?php $switchLocale = $locales[$localeCode]; ?>
-        <a href="<?= e(locale_setter_href($localeCode, $switchLocale['path'])) ?>"<?php if ($localeCode === $locale): ?> aria-current="true"<?php endif; ?> role="menuitem"><?= e($switchLocale['label']) ?></a>
+        <li>
+          <a href="<?= e(locale_setter_href($localeCode, $switchLocale['path'])) ?>"<?php if ($localeCode === $locale): ?> aria-current="true"<?php endif; ?>><?= e($switchLocale['label']) ?></a>
+        </li>
 <?php endforeach; ?>
-      </div>
-    </div>
+      </ul>
+    </details>
   </div>
 </header>
