@@ -10,6 +10,7 @@ if (!function_exists('send_security_headers')) {
         }
 
         $cacheControl = $options['cache_control'] ?? null;
+        $vary = $options['vary'] ?? null;
 
         header('X-Content-Type-Options: nosniff');
         header('Referrer-Policy: strict-origin-when-cross-origin');
@@ -19,6 +20,10 @@ if (!function_exists('send_security_headers')) {
 
         if (is_string($cacheControl) && $cacheControl !== '') {
             header('Cache-Control: ' . $cacheControl);
+        }
+
+        if (is_string($vary) && $vary !== '') {
+            header('Vary: ' . $vary);
         }
     }
 }

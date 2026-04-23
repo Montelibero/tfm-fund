@@ -51,6 +51,7 @@ if (isset($_COOKIE['lang']) && in_array($_COOKIE['lang'], $valid, true)) {
 
 send_security_headers([
     'cache_control' => 'no-store',
+    'vary' => 'Accept-Language, Cookie',
 ]);
 
 switch ($target) {

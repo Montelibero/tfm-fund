@@ -9,7 +9,8 @@ require_once __DIR__ . '/../partials/headers.php';
 require_once __DIR__ . '/../partials/helpers.php';
 
 send_security_headers([
-    'cache_control' => 'no-store',
+    'cache_control' => 'public, max-age=300, s-maxage=3600',
+    'vary' => 'Accept-Encoding',
 ]);
 
 $localeData = require __DIR__ . '/../partials/data/locales.php';
