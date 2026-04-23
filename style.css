@@ -516,7 +516,6 @@ main > .section.section--priority{ padding-top: 56px; }
   user-select: all;
   -webkit-user-select: all;
   appearance: none;
-  resize: vertical;
   cursor: text;
   transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }

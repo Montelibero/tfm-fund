@@ -47,6 +47,15 @@
 
     button.addEventListener('click', async function () {
       var text = button.getAttribute('data-copy') || '';
+
+      if (typeof button.focus === 'function') {
+        button.focus();
+      }
+
+      if (typeof button.select === 'function') {
+        button.select();
+      }
+
       var copied = await copyText(text);
 
       if (!copied || !status) {

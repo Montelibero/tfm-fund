@@ -35,16 +35,20 @@
           <h3><?= e($t['donate']['methods']['direct']['title']) ?></h3>
           <p><?= e($t['donate']['methods']['direct']['body']) ?></p>
           <div class="wallet-address">
-            <textarea
+            <input
+              id="wallet-address"
               class="address-text"
-              rows="3"
+              type="text"
               readonly
+              inputmode="text"
+              autocomplete="off"
               spellcheck="false"
+              value="<?= e(STELLAR_TFM_DONATION_ACCOUNT) ?>"
               data-copy="<?= e(STELLAR_TFM_DONATION_ACCOUNT) ?>"
               data-copy-success="<?= e($t['donate']['methods']['direct']['copied']) ?>"
               data-copy-status-id="wallet-copy-status"
               aria-describedby="wallet-copy-note wallet-copy-status"
-            ><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></textarea>
+            >
           </div>
           <p class="donation-note" id="wallet-copy-note"><?= e($t['donate']['methods']['direct']['note']) ?></p>
           <p class="donation-toast" id="wallet-copy-status" aria-live="polite" hidden></p>
