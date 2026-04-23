@@ -149,4 +149,10 @@ return [
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
     ],
+    'error' => [
+        'title' => 'Solicitud de donación no válida',
+        'invalid_amount' => 'Introduzca un monto válido mayor que 0 y no superior a 1.000.000.',
+        'invalid_method' => 'Elija un método de donación compatible e inténtelo de nuevo.',
+        'back_to_donate' => 'Volver al formulario de donación',
+    ],
 ];

@@ -149,4 +149,10 @@ return [
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
     ],
+    'error' => [
+        'title' => 'Neispravan zahtjev za donaciju',
+        'invalid_amount' => 'Unesite ispravan iznos veći od 0 i ne veći od 1.000.000.',
+        'invalid_method' => 'Izaberite podržani način donacije i pokušajte ponovo.',
+        'back_to_donate' => 'Nazad na formu za donaciju',
+    ],
 ];

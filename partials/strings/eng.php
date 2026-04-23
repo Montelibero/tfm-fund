@@ -149,4 +149,10 @@ return [
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
     ],
+    'error' => [
+        'title' => 'Invalid donation request',
+        'invalid_amount' => 'Enter a valid amount greater than 0 and no more than 1,000,000.',
+        'invalid_method' => 'Choose a supported donation method and try again.',
+        'back_to_donate' => 'Back to donation form',
+    ],
 ];
