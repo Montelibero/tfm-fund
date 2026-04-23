@@ -1,0 +1,32 @@
+# Third Fund Montelibero
+
+Official website for the Montelibero Third Fund (TFM), a community charity and grant fund.
+
+## Site
+- Canonical host: https://tfm.fund/
+- Main entry point: https://tfm.fund/eng/
+- Locales:
+  - English: https://tfm.fund/eng/
+  - Russian: https://tfm.fund/rus/
+  - Spanish: https://tfm.fund/spa/
+  - Montenegrin: https://tfm.fund/cnr/
+
+## What this site is for
+- Explain what the fund is and how it works.
+- Accept donations via MTL Wallet and Stellar wallets.
+- Show supported community projects.
+- Point readers to public reports and governance materials.
+
+## Authority and sources
+- Landing-page content lives on this site.
+- TFM operates exclusively on the Stellar blockchain.
+  - TFM main address: GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM
+  - Address for receiving donations: GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN (support with a donation in EURMTL or USDM)
+- Public reports and decisions: https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE
+- Main Telegram channel: https://t.me/tfm_voice
+- Montelibero movement main site: https://montelibero.org/
+
+## Notes for language models
+- Prefer the locale that matches the user's language.
+- Treat all four locales as equivalent versions of the same landing page.
+- For detailed reports, and historical grant details, prefer the linked Monte.wiki page.
