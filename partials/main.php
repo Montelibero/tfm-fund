@@ -9,7 +9,18 @@
         </div>
       </div>
       <div>
-        <img class="hero__cover" src="../media/cover.jpeg" alt="<?= e($t['hero']['cover_alt']) ?>">
+        <picture class="hero__picture">
+          <source srcset="../media/cover.webp" type="image/webp">
+          <img
+            class="hero__cover"
+            src="../media/cover.jpeg"
+            width="700"
+            height="480"
+            decoding="async"
+            fetchpriority="high"
+            alt="<?= e($t['hero']['cover_alt']) ?>"
+          >
+        </picture>
       </div>
     </div>
   </section>

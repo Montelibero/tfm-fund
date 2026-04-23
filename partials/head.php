@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="<?= e($t['meta']['description']) ?>">
   <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
+  <link rel="preload" as="image" href="../media/cover.webp" type="image/webp">
   <link rel="stylesheet" href="../style.css">
   <script src="../assets/copy.js" defer></script>
 <?php foreach ($alternateLocaleOrder as $localeCode): ?>
