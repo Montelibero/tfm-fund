@@ -58,7 +58,4 @@
 <?php require __DIR__ . '/reports.php'; ?>
 <?php require __DIR__ . '/donate.php'; ?>
 <?php require __DIR__ . '/projects.php'; ?>
-  <div class="container">
-    <p class="section__meta page-updated"><?= e($t['reports']['updated_label']) ?>: <?= e(format_local_date($fundData['updated_date'], $locale)) ?></p>
-  </div>
 </main>

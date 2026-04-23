@@ -1,7 +1,12 @@
-  <section id="reports" class="section">
+  <section id="reports" class="section section--priority">
     <div class="container">
-      <h2><?= e($t['reports']['heading']) ?></h2>
-      <p class="section__lead"><?= e($t['reports']['lead']) ?></p>
+      <header class="section__header">
+        <div class="section__intro">
+          <h2><?= e($t['reports']['heading']) ?></h2>
+          <p class="section__lead"><?= e($t['reports']['lead']) ?></p>
+        </div>
+        <p class="section__meta section__meta--inline page-updated"><?= e($t['reports']['updated_label']) ?>: <?= e(format_local_date($fundData['updated_date'], $locale)) ?></p>
+      </header>
 
       <ul class="report-list">
 <?php foreach ($fundData['reports'] as $report): ?>

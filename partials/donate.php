@@ -1,8 +1,12 @@
 <?php $stellarInfoHref = wiki_ru('Stellar'); ?>
-  <section id="donate" class="section">
+  <section id="donate" class="section section--priority">
     <div class="container">
-      <h2><?= e($t['donate']['heading']) ?></h2>
-      <p><?= e($t['donate']['lead']) ?></p>
+      <header class="section__header">
+        <div class="section__intro">
+          <h2><?= e($t['donate']['heading']) ?></h2>
+          <p class="section__lead"><?= e($t['donate']['lead']) ?></p>
+        </div>
+      </header>
 
       <div class="donation-methods">
         <div class="donation-method">
@@ -31,16 +35,16 @@
           <h3><?= e($t['donate']['methods']['direct']['title']) ?></h3>
           <p><?= e($t['donate']['methods']['direct']['body']) ?></p>
           <div class="wallet-address">
-            <button
-              type="button"
+            <textarea
               class="address-text"
+              rows="3"
+              readonly
+              spellcheck="false"
               data-copy="<?= e(STELLAR_TFM_DONATION_ACCOUNT) ?>"
               data-copy-success="<?= e($t['donate']['methods']['direct']['copied']) ?>"
               data-copy-status-id="wallet-copy-status"
               aria-describedby="wallet-copy-note wallet-copy-status"
-            >
-              <code><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></code>
-            </button>
+            ><?= e(STELLAR_TFM_DONATION_ACCOUNT) ?></textarea>
           </div>
           <p class="donation-note" id="wallet-copy-note"><?= e($t['donate']['methods']['direct']['note']) ?></p>
           <p class="donation-toast" id="wallet-copy-status" aria-live="polite" hidden></p>

@@ -1,6 +1,10 @@
-  <section id="projects" class="section">
+  <section id="projects" class="section section--priority">
     <div class="container">
-      <h2><?= e($t['projects']['heading']) ?></h2>
+      <header class="section__header">
+        <div class="section__intro">
+          <h2><?= e($t['projects']['heading']) ?></h2>
+        </div>
+      </header>
       <div class="projects">
 <?php foreach ($projects as $project): ?>
 <?php $item = $t['projects']['items'][$project['id']]; ?>
@@ -19,7 +23,7 @@
               >
             </picture>
             <div class="project_body">
-              <h4><?= e($item['title']) ?></h4>
+              <h3 class="project__title"><?= e($item['title']) ?></h3>
               <p><?= e($item['body']) ?></p>
               <span class="project_more__label"><?= e($t['shared']['details']) ?></span>
             </div>
