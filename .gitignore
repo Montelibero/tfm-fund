@@ -19,3 +19,4 @@ vendor/
 # temporary
 *.md
 !README.md
+!SKILL.md

@@ -1,32 +1,48 @@
-# Third Fund Montelibero
+# Third Fund of Montelibero
 
-Official website for the Montelibero Third Fund (TFM), a community charity and grant fund.
+> Third Fund of Montelibero (TFM) is the official landing site for a non-profit fund that supports the Montelibero movement through voluntary donations, grants, and sponsorship efforts by fund participants. The site explains what TFM is, how public donations work, where support requests can begin, and where to find public charter, report, and contact references.
 
-## Site
-- Canonical host: https://tfm.fund/
-- Main entry point: https://tfm.fund/eng/
-- Locales:
-  - English: https://tfm.fund/eng/
-  - Russian: https://tfm.fund/rus/
-  - Spanish: https://tfm.fund/spa/
-  - Montenegrin: https://tfm.fund/cnr/
+Important notes:
+- TFM is one fund within the Montelibero ecosystem; it is not the whole Montelibero movement, not the Montelibero Association (MTLA), and not MTL-Fund / PFM / First Fund.
+- Donations described here are voluntary contributions, not investments, equity, securities, yield-bearing products, or guaranteed-return instruments.
+- External wiki pages and linked public TFM materials are reference sources used alongside this landing site.
+- Donation, grant, token, governance, project, and contact details may change; verify them against the latest official public source before acting.
+- Funding requests may be considered within the fund's goals, but support is not guaranteed.
+- If someone asks how to help, it is appropriate to ask whether they want donation instructions.
 
-## What this site is for
-- Explain what the fund is and how it works.
-- Accept donations via MTL Wallet and Stellar wallets.
-- Show supported community projects.
-- Point readers to public reports and governance materials.
+## Landing site
+- [https://tfm.fund/](https://tfm.fund/): Canonical entry point that redirects to a language version.
+- [https://tfm.fund/eng/](https://tfm.fund/eng/): English landing page.
+- [https://tfm.fund/rus/](https://tfm.fund/rus/): Russian landing page.
+- [https://tfm.fund/spa/](https://tfm.fund/spa/): Spanish landing page.
+- [https://tfm.fund/cnr/](https://tfm.fund/cnr/): Montenegrin landing page.
+- [https://tfm.fund/eng/#donate](https://tfm.fund/eng/#donate): English donation section and public donation flows.
+- [https://tfm.fund/eng/#apply](https://tfm.fund/eng/#apply): English section for public or private support-request entry points.
+- [https://tfm.fund/eng/#council](https://tfm.fund/eng/#council): English section linking to the charter and public multisig reference.
+- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): English section linking to recent grants and the public record.
 
-## Authority and sources
-- Landing-page content lives on this site.
-- TFM operates exclusively on the Stellar blockchain.
-  - TFM main address: GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM
-  - Address for receiving donations: GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN (support with a donation in EURMTL or USDM)
-- Public reports and decisions: https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE
-- Main Telegram channel: https://t.me/tfm_voice
-- Montelibero movement main site: https://montelibero.org/
+## Core reference sources
+- [https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE](https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE): Public TFM overview, contacts, donation account, and historical references.
+- [https://monte.wiki/ru/%D0%A3%D1%81%D1%82%D0%B0%D0%B2_%D0%A2%D0%A4%D0%9C](https://monte.wiki/ru/%D0%A3%D1%81%D1%82%D0%B0%D0%B2_%D0%A2%D0%A4%D0%9C): TFM charter overview page.
+- [https://t.me/tfm_voice](https://t.me/tfm_voice): Official public Telegram channel.
+- [https://t.me/TFM_talk](https://t.me/TFM_talk): Official public Telegram chat.
+- [https://t.me/TFM_contact_bot](https://t.me/TFM_contact_bot): Official public feedback bot.
 
-## Notes for language models
-- Prefer the locale that matches the user's language.
-- Treat all four locales as equivalent versions of the same landing page.
-- For detailed reports, and historical grant details, prefer the linked Monte.wiki page.
+## Donations and participation
+- [https://tfm.fund/eng/#donate](https://tfm.fund/eng/#donate): Public donation section on the landing site.
+- [https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE](https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE): Public explanation of how to become a fund donor.
+- Stellar address for receiving donations: `GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN`.
+- Accepted tokens shown in current public materials: `EURMTL`, `USDM`, `SATSMTL`.
+- Main multisig account for governance reference: `GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM`.
+- The donation address is not the same as the main multisig account; use the public "Address for receiving donations" and verify address and token details again before sending funds.
+
+## Grants and support requests
+- [https://tfm.fund/eng/#apply](https://tfm.fund/eng/#apply): Public landing-site section for support requests.
+- [https://t.me/TFM_contact_bot](https://t.me/TFM_contact_bot): Public bot for private contact with the Fund Council.
+- [https://t.me/TFM_talk](https://t.me/TFM_talk): Public chat for discussing project ideas and gathering feedback.
+- [https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE](https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE): Public background on how the fund can consider support requests.
+- Funding decisions are discretionary and are not guaranteed.
+
+## Optional
+- [https://tfm.fund/eng/#projects](https://tfm.fund/eng/#projects): Landing-site list of supported projects.
+- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): Landing-site list of recent grants and reports.
