@@ -87,9 +87,20 @@ main > .section.section--priority{ padding-top: 56px; }
 .nav__title{ font-weight: 700; letter-spacing: 0.2px; }
 
 /* Menu */
-.menu{ display:flex; flex-wrap:wrap; align-items:center; gap:18px; row-gap:10px; }
+.menu{
+  display:flex;
+  flex-wrap: nowrap;
+  align-items:center;
+  gap: 10px 12px;
+  font-size: 0.9375rem;
+}
 .menu a{
   text-decoration:none; color:inherit; font-weight:500;
+  white-space: nowrap;
+}
+.menu--desktop .btn{
+  padding: 8px 12px;
+  font-size: inherit;
 }
 .menu a:hover,
 .menu a:focus-visible{ text-decoration: underline; }
@@ -600,19 +611,21 @@ select:focus-visible{
   .donation-methods{ grid-template-columns: 1fr; }
   .report-item--dated{ grid-template-columns: 150px 1fr; }
 }
-@media (max-width: 560px){
+@media (max-width: 720px){
   .menu--desktop{ display:none; }
   .menu-mobile{ display:block; }
-  .cards, .projects{ grid-template-columns: 1fr; }
-  .cards--two{ grid-template-columns: 1fr; }
-  .hero .container{ padding-left: 20px; padding-right: 20px; }
-  .header .container{ padding-left: calc(20px + env(safe-area-inset-left)); padding-right: calc(20px + env(safe-area-inset-right)); }
   .nav{
     align-items:flex-start;
   }
   .nav__controls{
     margin-left:auto;
   }
+}
+@media (max-width: 560px){
+  .cards, .projects{ grid-template-columns: 1fr; }
+  .cards--two{ grid-template-columns: 1fr; }
+  .hero .container{ padding-left: 20px; padding-right: 20px; }
+  .header .container{ padding-left: calc(20px + env(safe-area-inset-left)); padding-right: calc(20px + env(safe-area-inset-right)); }
   .hero__grid{ padding: 20px 0 16px; gap: 16px; }
   .donation-methods{ grid-template-columns: 1fr; gap: 16px; }
   .address-text{ font-size: 12px; padding: 10px; }

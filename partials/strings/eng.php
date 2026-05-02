@@ -21,7 +21,7 @@ return [
         'skip_link' => 'Skip to content',
         'nav' => [
             'about' => 'About',
-            'how' => 'How it works',
+            'how' => 'How',
             'projects' => 'Projects',
             'apply' => 'Apply',
             'reports' => 'Reports',
@@ -70,7 +70,7 @@ return [
     ],
     'apply' => [
         'heading' => 'Apply for a grant',
-        'lead' => 'Anyone can propose a project or idea that needs support. You do not need to be a Montelibero member to ask the fund for help.',
+        'lead' => 'Anyone can propose a project or idea that needs support.',
         'quote' => 'If a project helps develop, promote, or grow the Montelibero movement, the fund can consider it.',
         'private' => [
             'title' => 'Private request to the Council',
@@ -82,7 +82,7 @@ return [
             'body' => 'Open discussion in the public Telegram chat is the fastest way to get feedback, find supporters, and refine a grant idea.',
             'cta' => 'Open the public chat',
         ],
-        'note' => 'The fund provides grants, but project administration remains with the proposer. If you are ready to curate a project, that work can also be funded.',
+        'note' => 'The fund provides grants, but project administration remains with the proposer.',
     ],
     'council' => [
         'heading' => 'Fund Council',
@@ -107,11 +107,11 @@ return [
         'updated_label' => 'Updated',
         'cta' => 'Open the full public record',
         'items' => [
-            'munich' => 'Partial funding of an MTLA representative trip to the Munich conference',
-            'speech' => 'Sponsorship of the "Part of Speech" essay contest',
-            'crypto_book' => 'Sponsorship of the Montenegrin edition of "Fundamentals of Cryptocurrencies"',
-            'porcfest' => 'Sponsorship of Montelibero representation at Porcupine Freedom Festival 2025',
-            'liberty_conf' => 'Sponsorship of the II Liberty Conf conference in Tbilisi',
+            'IAM' => 'Support for developing the Montelibero Information Agency',
+            'mindell' => 'Support for Worldwork (Mindell) training',
+            'veritas' => 'Sponsorship of Stellar Veritas, a FLOSS Haskell wallet for Stellar',
+            'mocagaza' => 'Sponsorship of advertising for the MocaGaza festival in Georgia',
+            'libart' => 'Sponsorship of the libertarian art contest',
         ],
     ],
     'donate' => [

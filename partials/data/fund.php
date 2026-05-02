@@ -5,7 +5,7 @@ declare(strict_types=1);
 $reportsRoot = wiki_ru('Третий_фонд_Монтелиберо');
 
 return [
-    'updated_date' => '2025-10-28',
+    'updated_date' => '2026-05-02',
     'links' => [
         'contact_bot' => 'https://t.me/TFM_contact_bot',
         'public_chat' => 'https://t.me/TFM_talk',
@@ -15,24 +15,24 @@ return [
     ],
     'reports' => [
         [
-            'id' => 'munich',
-            'href' => 'https://t.me/tfm_talk/3356',
+            'id' => 'IAM',
+            'href' => 'https://t.me/tfm_talk/4220',
         ],
         [
-            'id' => 'speech',
-            'href' => 'https://t.me/tfm_talk/3440',
+            'id' => 'mindell',
+            'href' => 'https://t.me/tfm_talk/4110',
         ],
         [
-            'id' => 'crypto_book',
-            'href' => 'https://t.me/tfm_talk/3636',
+            'id' => 'veritas',
+            'href' => 'https://t.me/tfm_talk/4049',
         ],
         [
-            'id' => 'porcfest',
-            'href' => 'https://t.me/tfm_talk/3641',
+            'id' => 'mocagaza',
+            'href' => 'https://t.me/tfm_talk/3830',
         ],
         [
-            'id' => 'liberty_conf',
-            'href' => 'https://t.me/tfm_talk/3718',
+            'id' => 'libart',
+            'href' => 'https://t.me/tfm_talk/3834',
         ],
     ],
 ];

@@ -21,7 +21,7 @@ return [
         'skip_link' => 'Preskoči na sadržaj',
         'nav' => [
             'about' => 'O fondu',
-            'how' => 'Kako funkcioniše',
+            'how' => 'Kako radi',
             'projects' => 'Projekti',
             'apply' => 'Prijava',
             'reports' => 'Izvještaji',
@@ -70,7 +70,7 @@ return [
     ],
     'apply' => [
         'heading' => 'Zatražite grant',
-        'lead' => 'Svaka osoba može predložiti projekat ili ideju kojoj je potrebna podrška. Ne morate biti član Montelibera da biste tražili pomoć fonda.',
+        'lead' => 'Svaka osoba može predložiti projekat ili ideju kojoj je potrebna podrška.',
         'quote' => 'Ako projekat pomaže razvoju, promociji ili rastu pokreta Montelibero, fond ga može uzeti u razmatranje.',
         'private' => [
             'title' => 'Pišite Savjetu privatno',
@@ -82,7 +82,7 @@ return [
             'body' => 'Javni Telegram chat je najbrži način da dobijete povratne informacije, pronađete podršku i doradite prijavu za grant.',
             'cta' => 'Otvori javni chat',
         ],
-        'note' => 'Fond dodjeljuje grantove, ali administracija projekta ostaje na predlagaču. Ako ste spremni da koordinirate projekat, i taj rad može biti finansiran.',
+        'note' => 'Fond dodjeljuje grantove, ali administracija projekta ostaje na predlagaču.',
     ],
     'council' => [
         'heading' => 'Savjet fonda',
@@ -107,11 +107,11 @@ return [
         'updated_label' => 'Ažurirano',
         'cta' => 'Otvori kompletnu javnu evidenciju',
         'items' => [
-            'munich' => 'Djelimično finansiranje puta predstavnika MTLA na konferenciju u Minhenu',
-            'speech' => 'Sponzorstvo konkursa eseja "Part of Speech"',
-            'crypto_book' => 'Sponzorstvo crnogorskog izdanja knjige "Fundamentals of Cryptocurrencies"',
-            'porcfest' => 'Sponzorstvo predstavljanja Montelibera na Porcupine Freedom Festival 2025',
-            'liberty_conf' => 'Sponzorstvo konferencije II Liberty Conf u Tbilisiju',
+            'IAM' => 'Podrška razvoju Informativne agencije Montelibero',
+            'mindell' => 'Podrška obuci Mindell (svjetski rad)',
+            'veritas' => 'Sponzorstvo razvoja FLOSS Stellar novčanika Veritas na Haskellu',
+            'mocagaza' => 'Sponzorstvo reklame festivala MocaGaza u Gruziji',
+            'libart' => 'Sponzorstvo konkursa libertarijanskog likovnog stvaralaštva',
         ],
     ],
     'donate' => [

@@ -20,8 +20,8 @@ return [
         'menu_label' => 'Menú',
         'skip_link' => 'Saltar al contenido',
         'nav' => [
-            'about' => 'Sobre el fondo',
-            'how' => 'Cómo funciona',
+            'about' => 'Sobre',
+            'how' => 'Proceso',
             'projects' => 'Proyectos',
             'apply' => 'Solicitar',
             'reports' => 'Informes',
@@ -70,7 +70,7 @@ return [
     ],
     'apply' => [
         'heading' => 'Solicitar una subvención',
-        'lead' => 'Cualquier persona puede proponer un proyecto o una idea que necesite apoyo. No es necesario ser miembro de Montelibero para solicitar ayuda al fondo.',
+        'lead' => 'Cualquier persona puede proponer un proyecto o una idea que necesite apoyo.',
         'quote' => 'Si un proyecto ayuda al desarrollo, la promoción o el crecimiento del movimiento Montelibero, el fondo puede considerarlo.',
         'private' => [
             'title' => 'Escribir al Consejo en privado',
@@ -82,7 +82,7 @@ return [
             'body' => 'El chat público de Telegram es la forma más rápida de recibir comentarios, encontrar apoyo y mejorar una propuesta de subvención.',
             'cta' => 'Abrir el chat público',
         ],
-        'note' => 'El fondo concede subvenciones, pero la administración del proyecto sigue siendo responsabilidad del proponente. Si está listo para coordinar un proyecto, ese trabajo también puede financiarse.',
+        'note' => 'El fondo concede subvenciones, pero la administración del proyecto sigue siendo responsabilidad del proponente.',
     ],
     'council' => [
         'heading' => 'Consejo del fondo',
@@ -107,11 +107,11 @@ return [
         'updated_label' => 'Actualizado',
         'cta' => 'Abrir el registro público completo',
         'items' => [
-            'munich' => 'Financiación parcial del viaje de un representante de MTLA a la conferencia de Múnich',
-            'speech' => 'Patrocinio del concurso de ensayos "Part of Speech"',
-            'crypto_book' => 'Patrocinio de la edición montenegrina de "Fundamentals of Cryptocurrencies"',
-            'porcfest' => 'Patrocinio de la representación de Montelibero en Porcupine Freedom Festival 2025',
-            'liberty_conf' => 'Patrocinio de la conferencia II Liberty Conf en Tiflis',
+            'IAM' => 'Apoyo al desarrollo de la Agencia de Información de Montelibero',
+            'mindell' => 'Apoyo a la formación en Mindell (Worldwork)',
+            'veritas' => 'Patrocinio del desarrollo de Stellar Veritas, monedero FLOSS en Haskell para Stellar',
+            'mocagaza' => 'Patrocinio de la publicidad del festival MocaGaza en Georgia',
+            'libart' => 'Patrocinio del concurso de arte libertario',
         ],
     ],
     'donate' => [
