@@ -25,7 +25,7 @@ Principles:
 - `style.css` — one shared stylesheet.
 - `assets/copy.js` — optional progressive enhancement for click-to-copy wallet address.
 - `media/` — hero image, project covers, logo, icons, OG images.
-- `robots.txt`, `sitemap.xml`, `llms.txt`, `site.webmanifest` — crawl/share metadata.
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `.well-known/agent-skills/`, `site.webmanifest` — crawl/share/agent metadata.
 
 ## URL scheme
 

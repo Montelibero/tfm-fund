@@ -17,6 +17,8 @@ if (!function_exists('send_security_headers')) {
         header('Permissions-Policy: geolocation=(), camera=(), microphone=()');
         header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
         header("Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; connect-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; form-action 'self'; frame-ancestors 'none'");
+        header('Link: </llms.txt>; rel="describedby"; type="text/markdown"', false);
+        header('Link: </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"', false);
 
         if (is_string($cacheControl) && $cacheControl !== '') {
             header('Cache-Control: ' . $cacheControl);

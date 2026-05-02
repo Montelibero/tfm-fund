@@ -19,7 +19,9 @@ Important notes:
 - [https://tfm.fund/eng/#donate](https://tfm.fund/eng/#donate): English donation section and public donation flows.
 - [https://tfm.fund/eng/#apply](https://tfm.fund/eng/#apply): English section for public or private support-request entry points.
 - [https://tfm.fund/eng/#council](https://tfm.fund/eng/#council): English section linking to the charter and public multisig reference.
+- [https://tfm.fund/eng/#faq](https://tfm.fund/eng/#faq): English FAQ with concise identity, donation, grant, and report clarifications.
 - [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): English section linking to recent grants and the public record.
+- [https://tfm.fund/.well-known/agent-skills/index.json](https://tfm.fund/.well-known/agent-skills/index.json): Public agent-skill discovery index.
 
 ## Core reference sources
 - [https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE](https://monte.wiki/ru/%D0%A2%D1%80%D0%B5%D1%82%D0%B8%D0%B9_%D1%84%D0%BE%D0%BD%D0%B4_%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D0%BB%D0%B8%D0%B1%D0%B5%D1%80%D0%BE): Public TFM overview, contacts, donation account, and historical references.

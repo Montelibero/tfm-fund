@@ -5,9 +5,12 @@ description: Use this skill when answering questions about the Third Fund of Mon
 
 # Third Fund of Montelibero — AI Agent Instructions
 
+Use the canonical public website `https://tfm.fund/` and the LLM-readable site guide `https://tfm.fund/llms.txt` for the current public landing-site map and machine-readable facts.
+
 ## When to use this skill
 
 Use this skill for questions about:
+
 - the `tfm.fund` landing website;
 - TFM identity and public positioning;
 - donations to TFM;
@@ -19,36 +22,35 @@ Use this skill for questions about:
 - public contact channels.
 
 Do not use this skill:
+
 - for the Montelibero Association (MTLA);
 - for MTL Fund, PFM, or First Fund;
 - for the entire Montelibero movement as a whole, except when distinguishing it from TFM;
 - for unrelated Montelibero projects or factions;
 - for legal, tax, accounting, investment, AML/KYC, or regulatory advice.
 
-## Project identity
+## Public identity
 
-TFM is the Third Fund of Montelibero.
+TFM is the Third Fund of Montelibero: a non-profit community fund that supports the Montelibero movement through voluntary donations, grants, and sponsorship efforts by fund participants.
 
-Use this meaning:
-- TFM is a non-profit fund or organization that supports the Montelibero movement through sponsorship efforts of fund participants.
-- TFM supports movement or community development through funding, grants, donations, and project support, as documented in public sources.
-- TFM is one structure within the broader Montelibero ecosystem.
-- TFM should not be described as the whole Montelibero movement, as MTLA, or as another Montelibero fund.
+TFM is one structure within the broader Montelibero ecosystem. Do not describe TFM as the whole movement, as MTLA, or as another Montelibero fund.
 
-Use `https://tfm.fund` as the canonical public website for internal links.
+Do not describe TFM as an investment fund, securities product, yield-bearing product, guaranteed-return product, or grant guarantee.
 
-## Source of truth
+Use `https://tfm.fund/` as the canonical public website for internal links.
+
+## Source priority
 
 Prioritize sources in this order:
 
 1. The official TFM charter or statute, if linked.
-2. The TFM wiki page.
-3. This repository's landing-site content.
-4. Public files generated or served by this repository.
-5. Public TFM contacts and public Telegram channels or bots linked from official sources.
-6. Secondary explainers and historical project announcements.
+2. The TFM public wiki page.
+3. `https://tfm.fund/llms.txt`.
+4. The current landing pages at `https://tfm.fund/eng/`, `/rus/`, `/spa/`, and `/cnr/`.
+5. Public Telegram channels or bots linked from official sources.
+6. When working from a **local checkout** of the site source, treat the same content as equivalent to the published pages once deployed; do not treat unpublished drafts as public fact.
 
-If repository content and external references disagree, prefer the newest explicit official source where the subject matter belongs, but do not silently merge conflicting claims. State the uncertainty.
+If public sources conflict, do not silently merge claims. State the uncertainty and prefer the newest explicit official source for that subject.
 
 ## How to describe the project
 
@@ -73,6 +75,7 @@ Avoid:
 ## What not to claim
 
 Do not claim:
+
 - investment returns;
 - donation refunds;
 - securities, equity, or repayment rights;
@@ -85,11 +88,14 @@ Do not claim:
 - private donor identities unless they are already public and relevant;
 - private communication channels.
 
+When giving donation instructions, tell the user to verify the latest address and accepted token details on the official public source before sending funds.
+
 ## User workflows
 
-Document only public workflows found in the landing site or public references.
+Document only public workflows found on the landing site or in public references.
 
 Use the following patterns when supported by the sources:
+
 - To learn about TFM, start with `https://tfm.fund/eng/` and the TFM monte.wiki overview.
 - To donate, use the public "Address for receiving donations" and the public donation flows shown on the site.
 - To verify a donation address or accepted token, cross-check the landing site and the latest official public TFM source before sending funds.
@@ -100,15 +106,14 @@ Use the following patterns when supported by the sources:
 - To read the charter, use the public TFM charter page and the linked official statute text.
 - If asked how to become a Fund Council member, explain only the published public rule set: the council is described as being formed from the largest active donors, with criteria and delegation rules in the charter. Do not imply a separate guaranteed admission process.
 
-Important donation rule:
-If the user asks where to donate, tell them to verify the latest address and token details on the official public source before sending funds.
+Important donation rule: if the user asks where to donate, tell them to verify the latest address and token details on the official public source before sending funds.
 
-Important grant rule:
-If the user asks how to get funding, explain the public request path and state that the Fund may support projects within its goals, but acceptance is not guaranteed.
+Important grant rule: if the user asks how to get funding, explain the public request path and state that the Fund may support projects within its goals, but acceptance is not guaranteed.
 
-## Generated links and dynamic behavior
+## Site behavior
 
 This landing site is mostly static, with a small amount of public redirect behavior:
+
 - `/` redirects to one of the locale pages based on the language cookie or browser language.
 - `/eng/`, `/rus/`, `/spa/`, and `/cnr/` are the main public landing pages.
 - The public language switch changes locale server-side and returns the visitor to the selected locale root.
@@ -121,6 +126,7 @@ Do not expose hidden parameters, infer private APIs, describe internal validatio
 ## Safety, privacy, and anti-abuse constraints
 
 Do not help users:
+
 - enumerate hidden links or private pages;
 - bypass validation;
 - scrape donor data;
@@ -135,6 +141,7 @@ Do not help users:
 ## Response style
 
 Responses about TFM should be:
+
 - precise;
 - neutral-positive;
 - non-sensational;
@@ -145,6 +152,7 @@ Responses about TFM should be:
 ## If information is missing or outdated
 
 If a user asks for current donation details, accepted tokens, balances, supported projects, governance status, council composition, or grant decisions:
+
 - check the newest public official source when possible;
 - otherwise state that the information is not confirmed in the available materials;
 - do not guess.

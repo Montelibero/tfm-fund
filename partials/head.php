@@ -4,18 +4,57 @@ $currentPath = $currentLocale['path'];
 $canonicalUrl = absolute_url($currentPath);
 $ogImagePath = '/media/og-' . $locale . '.jpg';
 $ogImageUrl = absolute_url($ogImagePath);
+$organizationId = absolute_url('/#organization');
+$websiteId = absolute_url('/#website');
 $organizationJsonLd = [
     '@context' => 'https://schema.org',
-    '@type' => 'NonprofitOrganization',
-    'name' => $t['header']['brand'],
-    'url' => $canonicalUrl,
-    'logo' => absolute_url('/media/logo-tfm.svg'),
-    'description' => $t['meta']['description'],
-    'foundingDate' => FUND_FOUNDING_DATE,
-    'areaServed' => 'Worldwide',
-    'sameAs' => [
-        wiki_ru('Третий_фонд_Монтелиберо'),
-        TG_CHANNEL,
+    '@graph' => [
+        [
+            '@type' => 'NonprofitOrganization',
+            '@id' => $organizationId,
+            'name' => $t['header']['brand'],
+            'alternateName' => 'TFM',
+            'url' => absolute_url('/'),
+            'logo' => absolute_url('/media/logo-tfm.svg'),
+            'description' => $t['meta']['description'],
+            'foundingDate' => FUND_FOUNDING_DATE,
+            'areaServed' => 'Worldwide',
+            'sameAs' => [
+                wiki_ru('Третий_фонд_Монтелиберо'),
+                TG_CHANNEL,
+            ],
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'contactType' => 'public inquiries',
+                'url' => $fundData['links']['contact_bot'],
+                'availableLanguage' => ['en', 'ru', 'es', 'sr-ME'],
+            ],
+        ],
+        [
+            '@type' => 'WebSite',
+            '@id' => $websiteId,
+            'name' => $t['header']['brand'],
+            'url' => absolute_url('/'),
+            'description' => $t['meta']['description'],
+            'inLanguage' => array_values(array_map(static fn(array $localeItem): string => $localeItem['html_lang'], $locales)),
+            'publisher' => [
+                '@id' => $organizationId,
+            ],
+        ],
+        [
+            '@type' => 'FAQPage',
+            '@id' => $canonicalUrl . '#faq',
+            'url' => $canonicalUrl . '#faq',
+            'inLanguage' => $currentLocale['html_lang'],
+            'mainEntity' => array_map(static fn(array $item): array => [
+                '@type' => 'Question',
+                'name' => $item['question'],
+                'acceptedAnswer' => [
+                    '@type' => 'Answer',
+                    'text' => $item['answer'],
+                ],
+            ], $t['faq']['items']),
+        ],
     ],
 ];
 ?>
@@ -50,6 +89,8 @@ $organizationJsonLd = [
   <link rel="apple-touch-icon" href="../media/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
   <link rel="stylesheet" href="../style.css">
+  <link rel="describedby" href="/llms.txt" type="text/markdown">
+  <link rel="describedby" href="/.well-known/agent-skills/index.json" type="application/json">
   <script src="../assets/copy.js" defer></script>
 <?php foreach ($localeCodes as $localeCode): ?>
 <?php $altLocale = $locales[$localeCode]; ?>

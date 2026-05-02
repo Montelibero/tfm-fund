@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'meta' => [
-        'title' => 'Third Fund Montelibero — community charity foundation',
+        'title' => 'Third Fund of Montelibero — community charity foundation',
         'description' => 'Non-profit charity fund: we collect donations and transparently allocate grants to community projects.',
     ],
     'shared' => [
@@ -14,7 +14,7 @@ return [
         'learn_more' => 'Learn more',
     ],
     'header' => [
-        'brand' => 'Third Fund Montelibero',
+        'brand' => 'Third Fund of Montelibero',
         'nav_aria_label' => 'Primary',
         'lang_aria_label' => 'Language',
         'menu_label' => 'Menu',
@@ -26,10 +26,11 @@ return [
             'apply' => 'Apply',
             'reports' => 'Reports',
             'council' => 'Council',
+            'faq' => 'FAQ',
         ],
     ],
     'hero' => [
-        'title' => 'Transparent community fund for useful initiatives',
+        'title' => 'Third Fund of Montelibero',
         'lead' => 'We accept donations and award grants for projects such as infrastructure development, educational initiatives, events, conferences, development, publications, and much more.',
         'cover_alt' => 'Fund cover image: collaboration and support',
     ],
@@ -184,6 +185,32 @@ return [
             'mtltv' => [
                 'title' => 'MTL TV',
                 'body' => 'Donations to support activity.',
+            ],
+        ],
+    ],
+    'faq' => [
+        'heading' => 'FAQ',
+        'lead' => 'Short answers for people and AI agents that need to understand the fund without guessing.',
+        'items' => [
+            [
+                'question' => 'What is the Third Fund of Montelibero?',
+                'answer' => 'The Third Fund of Montelibero is a non-profit community fund that supports useful initiatives connected with the Montelibero movement through voluntary donations, grants, and sponsorship efforts.',
+            ],
+            [
+                'question' => 'Is donating to the fund an investment?',
+                'answer' => 'No. Donations to TFM are voluntary contributions. They are not investments, securities, equity, loans, yield-bearing products, or guaranteed-return instruments.',
+            ],
+            [
+                'question' => 'How can someone donate?',
+                'answer' => 'The site shows public donation flows through different Stellar wallets to the visible TFM Stellar donation address. Always verify the latest address and accepted tokens on an official public source before sending funds.',
+            ],
+            [
+                'question' => 'How can someone request support or a grant?',
+                'answer' => 'A project proposer can contact the Fund Council through the public feedback bot or discuss the idea in the public Telegram chat. The fund may consider projects within its goals, but support is not guaranteed.',
+            ],
+            [
+                'question' => 'Where are reports and fund rules published?',
+                'answer' => 'The site links to the public MonteWiki record, recent grant references, the fund charter, and the main multisig account used as a public governance reference.',
             ],
         ],
     ],

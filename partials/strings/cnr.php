@@ -26,10 +26,11 @@ return [
             'apply' => 'Prijava',
             'reports' => 'Izvještaji',
             'council' => 'Savjet',
+            'faq' => 'FAQ',
         ],
     ],
     'hero' => [
-        'title' => 'Transparentan fond zajednice za korisne inicijative',
+        'title' => 'Treći fond Montelibero',
         'lead' => 'Primamo donacije i dodjeljujemo grantove za projekte koji uključuju razvoj infrastrukture, obrazovne inicijative, događaje, konferencije, publikacije i još mnogo toga.',
         'cover_alt' => 'Naslovna slika fonda',
     ],
@@ -136,7 +137,7 @@ return [
                 'copied' => 'Kopirano',
             ],
         ],
-        'stellar_info_label' => 'Šta je Stellar?',
+        'stellar_info_label' => 'Što je Stellar?',
     ],
     'projects' => [
         'heading' => 'Podržani projekti',
@@ -184,6 +185,32 @@ return [
             'mtltv' => [
                 'title' => 'MTL TV',
                 'body' => 'Donacije za podršku aktivnostima.',
+            ],
+        ],
+    ],
+    'faq' => [
+        'heading' => 'FAQ',
+        'lead' => 'Kratki odgovori za ljude i AI agente koji trebaju da razumiju fond bez nagađanja.',
+        'items' => [
+            [
+                'question' => 'Što je Treći fond Montelibero?',
+                'answer' => 'Treći fond Montelibero je neprofitni fond zajednice koji podržava korisne inicijative povezane sa pokretom Montelibero kroz dobrovoljne donacije, grantove i sponzorsku podršku.',
+            ],
+            [
+                'question' => 'Da li je donacija fondu investicija?',
+                'answer' => 'Ne. Donacije TFM-u su dobrovoljni doprinosi. To nisu investicije, hartije od vrijednosti, udjeli, zajmovi, proizvodi sa prinosom ili instrumenti sa garantovanim povratom.',
+            ],
+            [
+                'question' => 'Kako se može donirati?',
+                'answer' => 'Sajt prikazuje javne tokove donacije preko MTL Wallet, Stellar novčanika i direktnog transfera na vidljivu Stellar adresu za donacije. Prije slanja sredstava uvijek provjerite najnoviju adresu i prihvaćene tokene u zvaničnom javnom izvoru.',
+            ],
+            [
+                'question' => 'Kako se može zatražiti podrška ili grant?',
+                'answer' => 'Predlagač projekta može kontaktirati Savjet fonda preko javnog bota za kontakt ili razgovarati o ideji u javnom Telegram chatu. Fond može razmotriti projekte u okviru svojih ciljeva, ali podrška nije garantovana.',
+            ],
+            [
+                'question' => 'Gdje su objavljeni izvještaji i pravila fonda?',
+                'answer' => 'Sajt vodi ka javnoj evidenciji na MonteWiki, referencama najnovijih grantova, povelji fonda i glavnom multisig računu koji služi kao javna referenca upravljanja.',
             ],
         ],
     ],

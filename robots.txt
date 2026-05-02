@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 Disallow:
+
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
 Sitemap: https://tfm.fund/sitemap.xml

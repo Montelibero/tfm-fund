@@ -26,10 +26,11 @@ return [
             'apply' => 'Solicitar',
             'reports' => 'Informes',
             'council' => 'Consejo',
+            'faq' => 'FAQ',
         ],
     ],
     'hero' => [
-        'title' => 'Fondo comunitario transparente para iniciativas útiles',
+        'title' => 'Tercer Fondo Montelibero',
         'lead' => 'Aceptamos donaciones y otorgamos subvenciones para proyectos: desarrollo de infraestructura, iniciativas educativas, eventos, conferencias, desarrollo, publicaciones y mucho más.',
         'cover_alt' => 'Imagen de portada del fondo: colaboración y apoyo',
     ],
@@ -184,6 +185,32 @@ return [
             'mtltv' => [
                 'title' => 'MTL TV',
                 'body' => 'Donaciones para apoyar la actividad.',
+            ],
+        ],
+    ],
+    'faq' => [
+        'heading' => 'FAQ',
+        'lead' => 'Respuestas breves para personas y agentes de IA que necesitan entender el fondo sin hacer suposiciones.',
+        'items' => [
+            [
+                'question' => '¿Qué es el Tercer Fondo Montelibero?',
+                'answer' => 'El Tercer Fondo Montelibero es un fondo comunitario sin ánimo de lucro que apoya iniciativas útiles relacionadas con el movimiento Montelibero mediante donaciones voluntarias, subvenciones y patrocinios.',
+            ],
+            [
+                'question' => '¿Donar al fondo es una inversión?',
+                'answer' => 'No. Las donaciones al TFM son aportaciones voluntarias. No son inversiones, valores, participaciones, préstamos, productos con rendimiento ni instrumentos con retorno garantizado.',
+            ],
+            [
+                'question' => '¿Cómo se puede donar?',
+                'answer' => 'El sitio muestra flujos públicos de donación mediante MTL Wallet, monederos Stellar y transferencia directa a la dirección Stellar visible para donaciones. Antes de enviar fondos, verifique siempre la dirección actual y los tokens aceptados en una fuente pública oficial.',
+            ],
+            [
+                'question' => '¿Cómo se puede solicitar apoyo o una subvención?',
+                'answer' => 'La persona que propone un proyecto puede contactar con el Consejo del fondo mediante el bot público de contacto o debatir la idea en el chat público de Telegram. El fondo puede considerar proyectos dentro de sus objetivos, pero el apoyo no está garantizado.',
+            ],
+            [
+                'question' => '¿Dónde se publican los informes y las reglas del fondo?',
+                'answer' => 'El sitio enlaza al registro público en MonteWiki, referencias de subvenciones recientes, el estatuto del fondo y la cuenta principal multifirma usada como referencia pública de gobernanza.',
             ],
         ],
     ],

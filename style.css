@@ -337,6 +337,37 @@ main > .section.section--priority{ padding-top: 56px; }
   margin-top: 20px;
 }
 
+.faq-list{
+  display:grid;
+  gap:12px;
+  max-width: 860px;
+}
+
+.faq-item{
+  border:1px solid var(--line);
+  border-radius: var(--rad);
+  background:#fff;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.faq-item:hover,
+.faq-item:focus-within{
+  border-color: var(--brand);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item summary{
+  cursor:pointer;
+  padding:14px 16px;
+  font-weight:700;
+}
+
+.faq-item p{
+  margin:0;
+  padding:0 16px 16px;
+  color: var(--muted);
+}
+
 /* Projects */
 .projects{
   display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
