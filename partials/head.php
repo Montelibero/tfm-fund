@@ -60,7 +60,7 @@ $organizationJsonLd = [
 ?>
   <meta charset="utf-8">
   <title><?= e($t['meta']['title']) ?></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="<?= e($t['meta']['description']) ?>">
   <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#dbb544">
