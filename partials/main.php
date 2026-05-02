@@ -10,7 +10,8 @@
       </div>
       <div>
         <picture class="hero__picture">
-          <source srcset="../media/cover.webp" type="image/webp">
+          <source srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" type="image/gif" media="(max-width: 560px)">
+          <source srcset="../media/cover.webp" type="image/webp" media="(min-width: 561px)">
           <img
             class="hero__cover"
             src="../media/cover.jpeg"

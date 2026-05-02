@@ -1,8 +1,10 @@
   <section id="council" class="section">
     <div class="container">
       <h2><?= e($t['council']['heading']) ?></h2>
-      <p class="section__lead"><?= e($t['council']['lead']) ?></p>
-      <p class="section__copy"><?= e($t['council']['body']) ?></p>
+      <div class="section__quote">
+        <p><?= e($t['council']['lead']) ?></p>
+        <p><?= e($t['council']['body']) ?></p>
+      </div>
 
       <div class="cards cards--two">
         <div class="card section-card">

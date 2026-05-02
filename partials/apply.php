@@ -1,8 +1,10 @@
   <section id="apply" class="section">
     <div class="container">
       <h2><?= e($t['apply']['heading']) ?></h2>
-      <p class="section__lead"><?= e($t['apply']['lead']) ?></p>
-      <blockquote class="section__quote"><?= e($t['apply']['quote']) ?></blockquote>
+      <div class="section__quote">
+        <p><?= e($t['apply']['lead']) ?></p>
+        <p><?= e($t['apply']['quote']) ?></p>
+      </div>
 
       <div class="cards cards--two">
         <div class="card section-card">

@@ -84,7 +84,7 @@ $organizationJsonLd = [
   <meta name="twitter:description" content="<?= e($t['meta']['description']) ?>">
   <meta name="twitter:image" content="<?= e($ogImageUrl) ?>">
   <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
-  <link rel="preload" as="image" href="../media/cover.webp" type="image/webp">
+  <link rel="preload" as="image" href="../media/cover.webp" type="image/webp" media="(min-width: 561px)">
   <link rel="canonical" href="<?= e($canonicalUrl) ?>">
   <link rel="apple-touch-icon" href="../media/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
