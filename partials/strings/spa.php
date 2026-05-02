@@ -225,6 +225,9 @@ return [
         'made_prefix' => 'Hecho con amor para ',
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
+        'since' => 'Desde 2023',
+        'source_code' => 'Código fuente',
+        'source_code_title' => 'Código fuente del sitio en GitHub',
     ],
     'error' => [
         'title' => 'Solicitud de donación no válida',

@@ -225,6 +225,9 @@ return [
         'made_prefix' => 'Made with love for ',
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
+        'since' => 'Since 2023',
+        'source_code' => 'Source code',
+        'source_code_title' => 'This site’s source on GitHub',
     ],
     'error' => [
         'title' => 'Invalid donation request',

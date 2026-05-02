@@ -9,5 +9,6 @@ const TG_WALLET_BOT_BASE = 'https://t.me/MyMTLWalletBot?start=';
 const MTL_REDIRECT_BASE = 'https://montelibero.net/redirect/?to=';
 const TG_CHANNEL = 'https://t.me/tfm_voice';
 const SITE_URL = 'https://tfm.fund';
+const SOURCE_REPO_URL = 'https://github.com/Montelibero/tfm-fund';
 const FUND_FOUNDING_DATE = '2023-06-12';
 const WIKI_ROOT_RU = 'https://monte.wiki/ru/';

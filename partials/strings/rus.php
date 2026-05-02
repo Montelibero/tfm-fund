@@ -225,6 +225,9 @@ return [
         'made_prefix' => 'Сделано с любовью для ',
         'made_link_label' => 'Монтелиберо',
         'made_logo_alt' => 'Montelibero',
+        'since' => 'С 2023 года',
+        'source_code' => 'Исходный код',
+        'source_code_title' => 'Исходники сайта на GitHub',
     ],
     'error' => [
         'title' => 'Некорректный запрос на пожертвование',

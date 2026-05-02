@@ -225,6 +225,9 @@ return [
         'made_prefix' => 'Napravljeno s ljubavlju za ',
         'made_link_label' => 'Montelibero',
         'made_logo_alt' => 'Montelibero',
+        'since' => 'Od 2023.',
+        'source_code' => 'Izvorni kod',
+        'source_code_title' => 'Izvorni kod sajta na GitHubu',
     ],
     'error' => [
         'title' => 'Neispravan zahtjev za donaciju',
