@@ -10,9 +10,9 @@
       <a href="#how"><?= e($t['header']['nav']['how']) ?></a>
       <a href="#projects"><?= e($t['header']['nav']['projects']) ?></a>
       <a href="#apply"><?= e($t['header']['nav']['apply']) ?></a>
-      <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
       <a href="#council"><?= e($t['header']['nav']['council']) ?></a>
       <a href="#faq"><?= e($t['header']['nav']['faq']) ?></a>
+      <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
       <a class="btn btn--brand" href="#donate"><?= e($t['shared']['donate']) ?></a>
     </nav>
     <div class="nav__controls">
@@ -23,9 +23,9 @@
           <a href="#how"><?= e($t['header']['nav']['how']) ?></a>
           <a href="#projects"><?= e($t['header']['nav']['projects']) ?></a>
           <a href="#apply"><?= e($t['header']['nav']['apply']) ?></a>
-          <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
           <a href="#council"><?= e($t['header']['nav']['council']) ?></a>
           <a href="#faq"><?= e($t['header']['nav']['faq']) ?></a>
+          <a href="#reports"><?= e($t['header']['nav']['reports']) ?></a>
           <a class="btn btn--brand" href="#donate"><?= e($t['shared']['donate']) ?></a>
         </nav>
       </details>
