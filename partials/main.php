@@ -15,8 +15,8 @@
           <img
             class="hero__cover"
             src="../media/cover.jpeg"
-            width="700"
-            height="480"
+            width="1600"
+            height="900"
             decoding="async"
             fetchpriority="high"
             alt="<?= e($t['hero']['cover_alt']) ?>"
