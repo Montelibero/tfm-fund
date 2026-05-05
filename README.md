@@ -1,6 +1,6 @@
-# Montelibero Third Fund landing
+# Third Fund of Montelibero landing
 
-Simple multilingual landing page for the Montelibero Third Fund.
+Simple multilingual landing page for the Third Fund of Montelibero.
 
 Principles:
 
