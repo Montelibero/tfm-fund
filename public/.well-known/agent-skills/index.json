@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "montelibero-tfm-info",
+      "type": "markdown",
+      "description": "Instructions for answering questions about the Third Fund of Montelibero, its public website, donations, grants, contacts, charter, and safe interpretation boundaries.",
+      "url": "https://tfm.fund/.well-known/agent-skills/montelibero-tfm-info/SKILL.md",
+      "sha256": "09c91fa9bbe2899d926250a5fd8e2e6c6d451e5173fd9dac6c28b53c6352e7df"
+    }
+  ]
+}

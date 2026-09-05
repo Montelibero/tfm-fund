@@ -1,22 +1,18 @@
-# macOS
+# Local files and credentials
 .DS_Store
-
-# editors
 .idea/
 .vscode/
 *.swp
-
-# PHP dependencies
-vendor/
-
-# environment files
-.env
-.env.local
-
-# logs
 *.log
-
-# temporary
-*.md
-!README.md
-!SKILL.md
+.env*
+*.key
+*.pem
+*.p12
+*.pfx
+__pycache__/
+/.local-backups/
+/*.local.md
+/airead.md
+/plan.md
+/review.md
+/roadmap.md
