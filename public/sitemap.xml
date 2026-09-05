@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tfm.fund/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tfm.fund/eng/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://tfm.fund/rus/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tfm.fund/spa/" />
+    <xhtml:link rel="alternate" hreflang="cnr" href="https://tfm.fund/cnr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tfm.fund/" />
+  </url>
+  <url>
     <loc>https://tfm.fund/eng/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://tfm.fund/eng/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://tfm.fund/rus/" />

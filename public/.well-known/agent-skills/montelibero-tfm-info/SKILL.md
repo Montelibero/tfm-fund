@@ -112,12 +112,12 @@ Important grant rule: if the user asks how to get funding, explain the public re
 
 ## Site behavior
 
-This landing site is mostly static, with a small amount of public redirect behavior:
+This landing site is entirely static:
 
 - `/` is a language selector linking directly to the four static locale pages. No language cookie is used.
 - `/eng/`, `/rus/`, `/spa/`, and `/cnr/` are the main public landing pages.
 - The public language switch links directly to the selected locale root.
-- The native Stellar link asks a compatible wallet to choose any amount. The Telegram link prefills 10 EURMTL. The public donation address remains available for a manual transfer of any amount. These paths work without site JavaScript; the website never signs or processes a payment.
+- The native Stellar link asks a compatible wallet to choose any amount. Telegram links prefill 10, 50 or 100 EURMTL. The public donation address remains available for a manual transfer of any amount. These paths work without site JavaScript; the website never signs or processes a payment.
 - The site uses a small client-side copy interaction for the visible donation address.
 - Grant or support actions on the site are public outbound links to the official bot and public chat.
 

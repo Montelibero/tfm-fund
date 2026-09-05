@@ -5,7 +5,7 @@
 Important notes:
 - TFM is one fund within the Montelibero ecosystem; it is not the whole Montelibero movement, not the Montelibero Association (MTLA), and not MTL-Fund / PFM / First Fund.
 - Donations described here are voluntary contributions, not investments, equity, securities, yield-bearing products, or guaranteed-return instruments.
-- Wallet links use EURMTL. The native Stellar link lets a compatible wallet ask for the amount; Telegram has a prefilled 10 EURMTL link. Manual transfer of any amount remains available. This site does not execute or hold payments.
+- Wallet links use EURMTL. The native Stellar link lets a compatible wallet ask for the amount; Telegram has prefilled 10, 50 and 100 EURMTL links. Manual transfer of any amount remains available. This site does not execute or hold payments.
 - Direct Stellar transfers are irreversible and may involve fees. Verify the network, donation address, accepted asset, and exact issuer against a current public source before sending.
 - External wiki pages and linked public TFM materials are reference sources used alongside this landing site.
 - Donation, grant, token, governance, project, and contact details may change; verify them against the latest official public source before acting.
@@ -23,7 +23,7 @@ Important notes:
 - [https://tfm.fund/eng/#apply](https://tfm.fund/eng/#apply): English section for public or private support-request entry points.
 - [https://tfm.fund/eng/#council](https://tfm.fund/eng/#council): English section linking to the charter and public multisig reference.
 - [https://tfm.fund/eng/#faq](https://tfm.fund/eng/#faq): English FAQ with concise identity, donation, grant, and report clarifications.
-- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): English section linking to recent support decisions and the public record.
+- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): English section linking to selected support decisions and the public record.
 - [https://tfm.fund/.well-known/agent-skills/index.json](https://tfm.fund/.well-known/agent-skills/index.json): Public agent-skill discovery index.
 
 ## Core reference sources
@@ -41,7 +41,7 @@ Important notes:
 - Stellar address for receiving donations: `GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN`.
 - Accepted tokens shown in current public materials: `EURMTL`, `USDM`, `SATSMTL`.
 - Wallet links: EURMTL only. Direct transfer: use only a currently accepted asset after verifying its exact issuer.
-- EURMTL issuer encoded by the automated routes: `GACKTN5DAZGWXRWB2WLM6OPBDHAMT6SJNGLJZPQMEZBUR4JUGBX2UK7V`.
+- EURMTL issuer encoded by the native wallet link: `GACKTN5DAZGWXRWB2WLM6OPBDHAMT6SJNGLJZPQMEZBUR4JUGBX2UK7V`.
 - Main multisig account for governance reference: `GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM`.
 - The donation address is not the same as the main multisig account; use the public "Address for receiving donations" and verify address and token details again before sending funds.
 
@@ -54,7 +54,7 @@ Important notes:
 
 ## Optional
 - [https://tfm.fund/eng/#projects](https://tfm.fund/eng/#projects): Landing-site list of supported projects.
-- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): Landing-site list of recent support decisions and reports.
+- [https://tfm.fund/eng/#reports](https://tfm.fund/eng/#reports): Landing-site list of selected support decisions and reports.
 
 ## Static site behavior
 The site has no PHP endpoints or payment forms. Language selection, navigation, donation links and support requests work without site JavaScript. No keys or wallet credentials are collected. A compatible installed wallet handles native Stellar links; use the visible address if no wallet opens.
