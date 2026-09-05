@@ -1,23 +1,48 @@
 # Third Fund of Montelibero
 
-Four static language pages, shared CSS and optional JavaScript. No PHP, packages,
-database or build step. Publish only `public/`.
+Four static language pages, one stylesheet and a small optional script. No PHP,
+packages, database, generator or build step. Publish only `public/`.
 
-## Preview
+## Preview and check
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1 --directory public
 ```
 
-Open http://127.0.0.1:8000/. Language choices, navigation, project links, grant
-requests and donations work without site JavaScript. The native Stellar payment
-link lets a compatible wallet ask for any amount; manual transfers always remain
-available. Telegram has a prefilled EURMTL donation link. No payment is signed or
-processed by this website.
+Open <http://127.0.0.1:8000/>. In another terminal:
 
-The root page is a language selector. Existing `/eng/`, `/rus/`, `/spa/`, `/cnr/`
-paths are retained. Old PHP endpoints are retired.
+```sh
+python3 scripts/check.py
+node --check public/assets/copy.js
+node scripts/check-copy.mjs
+```
 
-All website content, including `llms.txt` and `.well-known/agent-skills/`, lives in
-`public/`. Edit the four HTML files together when changing shared facts or links.
+Python 3.9+ and Node 18+ run the development checks; neither is needed to serve
+the website. CI uses the runtimes already on GitHub's hosted runner.
+
+## Editing
+
+- `public/{eng,rus,spa,cnr}/index.html` are the source of truth. Keep facts,
+  recipients, contacts, project sources and report dates aligned across all four.
+  The checks catch structural/link drift; translations still need editorial review.
+- `public/style.css` is shared. `public/assets/copy.js` only adds address copying
+  and Escape/outside-click handling for the native language disclosure.
+- `public/media/` contains the existing logo, five WebP/JPEG image pairs, four
+  localized social cards and browser icons. Remove unused media when replacing it.
+- Keep `public/llms.txt` and `public/.well-known/agent-skills/` accurate. After editing
+  the public `SKILL.md`, update its SHA-256 in `index.json` using `shasum -a 256`.
+- Keep the five canonical URLs and language alternatives aligned in the HTML and
+  `public/sitemap.xml`. Dates describe actual records, not automatic build dates.
+
+The root is a language selector. `/eng/`, `/rus/`, `/spa/` and `/cnr/` are retained.
+Language switching, navigation, expandable content, donation links and support
+requests work without site JavaScript. A compatible wallet handles the native
+Stellar payment link and asks for an amount. Telegram links offer 10, 50 and 100
+EURMTL; manual transfer of any amount remains available. This site never signs,
+executes or holds a payment. Third-party apps have their own requirements.
+
+GitHub Actions checks pull requests and publishes `public/` after checks pass on
+`main`. It explicitly includes `.well-known/`. See [production handover](docs/production.md)
+for Pages setup, domain cutover, external verification limits and rollback.
+
 Application code retains the GPL-3.0 license in `LICENSE`.
