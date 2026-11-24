@@ -29,12 +29,22 @@ jobs:
       # upload-pages-artifact excludes dot directories, including our public AI guide.
       # Archive only public/ ourselves so .well-known/ is included deliberately.
       - name: Package the static site
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
           tar --dereference --hard-dereference --directory public -cf "$RUNNER_TEMP/artifact.tar" .
-          tar -tf "$RUNNER_TEMP/artifact.tar" ./.well-known/agent-skills/index.json ./.well-known/agent-skills/montelibero-tfm-info/SKILL.md ./llms.txt
+          python3 scripts/check-archive.py "$RUNNER_TEMP/artifact.tar"
+      - name: Exercise keyboard navigation in the packaged site
+        run: |
+          mkdir "$RUNNER_TEMP/site"
+          tar -xf "$RUNNER_TEMP/artifact.tar" -C "$RUNNER_TEMP/site"
+          npm install --prefix "$RUNNER_TEMP/browser" --ignore-scripts --no-audit --no-fund playwright-core@1.61.1
+          export NODE_PATH="$RUNNER_TEMP/browser/node_modules"
+          export CHROME_PATH="$(command -v google-chrome)"
+          python3 -m http.server 8000 --bind 127.0.0.1 --directory "$RUNNER_TEMP/site" > "$RUNNER_TEMP/site.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          curl -fsS --retry 5 --retry-connrefused --retry-delay 1 http://127.0.0.1:8000/ -o /dev/null
+          node scripts/check-browser.cjs http://127.0.0.1:8000/
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
           name: github-pages
           path: ${{ runner.temp }}/artifact.tar

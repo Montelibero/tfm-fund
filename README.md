@@ -47,8 +47,9 @@ Stellar payment link and asks for an amount. Telegram links offer 10, 50 and 100
 EURMTL; manual transfer of any amount remains available. This site never signs,
 executes or holds a payment. Third-party apps have their own requirements.
 
-GitHub Actions checks pull requests and publishes `public/` after checks pass on
-`main`. It explicitly includes `.well-known/`. See [production handover](docs/production.md)
-for Pages setup, domain cutover, external verification limits and rollback.
+GitHub Actions checks and uploads the same Pages archive on pull requests and
+`main`. CI installs its pinned browser test client outside the site and uses
+the runner's Chrome. Only `main` deploys. See the [cutover and rollback
+checklist](docs/production.md) for the archive contents and live verification.
 
 Application code retains the GPL-3.0 license in `LICENSE`.

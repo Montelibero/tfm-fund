@@ -1,113 +1,90 @@
-# Production handover
+# Pages cutover for tfm.fund
 
-The repository is prepared for a static GitHub Pages deployment at `https://tfm.fund`.
-The branch has not been pushed or deployed by this implementation. Repository
-settings, DNS ownership and live HTTPS cannot be established by a local commit.
-Official legal review remains outside this work.
+## Candidate artifact
 
-## Initial state and preservation
+The `check` job packages a clean checkout on both pull requests and `main`.
+Download the **github-pages** artifact from the run for the revision under review.
+It contains a single `artifact.tar`. Only `main` can reach the deployment job.
+To reproduce the archive from the repository root on Linux with GNU tar:
 
-Work started from `main` at `452c542` (also `origin/main` and the live remote head
-when inspected). There were 29 unstaged modified files, eight untracked development
-and deployment files, and no staged changes. No `AGENTS.md` was found in the
-repository or its parent directories. The old README favoured simple PHP and shared
-partials; the owner's later request explicitly authorised a static replacement.
+```sh
+RUNNER_TEMP=$(mktemp -d)
+python3 scripts/check.py
+tar --dereference --hard-dereference --directory public -cf "$RUNNER_TEMP/artifact.tar" .
+python3 scripts/check-archive.py "$RUNNER_TEMP/artifact.tar"
+```
 
-The complete working tree before migration, including the local drafts and ignored
-notes, is preserved in `.local-backups/before-static/working-tree.tar.gz`, with
-patches and Git status alongside it. This directory is ignored and outside the
-publication root. Original ignored notes remain untouched. The implementation is
-on `codex/static-production`; PHP files and redundant local deployment tooling were
-retired after that backup. Git history preserves the committed implementation.
+The candidate contains 32 public files. They comprise the selector, four locales
+and 404 page, shared CSS and copy script, 17 media files, domain and crawler
+metadata, `llms.txt`, and the discovery index and Markdown guide under
+`/.well-known/agent-skills/`. The archive check compares every file with the
+checked publication tree and rejects extra members and links. CI serves the
+extracted tar to Chromium for its keyboard check.
 
-## Activate Pages
+The qualification pass exercised English, Russian, Spanish and Montenegrin at
+320, 768 and 1280 CSS pixels with page JavaScript disabled. It covered language
+switching, section links, disclosures, manual address selection and outbound
+wallet and support links. All four locales also passed a touch-navigation check
+in WebKit at 320 × 568. A local server returned the archived 404 page for a
+nested missing URL. Its recovery links assume the production domain root.
+Canonical, sitemap and social URLs name `https://tfm.fund/` even in a preview.
 
-1. Review the three implementation commits and merge them to `main` through a pull
-   request. Require the `check` job in the branch rules. Restrict changes to workflow
-   files, public payment identifiers and contact links to trusted maintainers.
-2. In repository **Settings → Pages**, select **GitHub Actions** as the source.
-   The workflow only deploys `main`; pull requests have read-only checks. Configure
-   the `github-pages` environment to allow deployments from `main` only.
-3. Verify `tfm.fund` in the Montelibero organisation's Pages settings using GitHub's
-   DNS TXT challenge. Set the repository's custom domain to `tfm.fund` before
-   changing the web DNS records. `public/CNAME` documents the intended domain;
-   custom-workflow deployments also need the domain configured in Pages settings.
-4. Run the workflow on `main`. Keep a copy of the current server release and DNS
-   records, then follow GitHub's current DNS instructions for an apex domain and
-   optional `www` redirect. Remove obsolete web A/AAAA records, preserve unrelated
-   records, and do not create wildcard records. Keep the old server available
-   during DNS propagation and certificate issuance.
-5. Enable **Enforce HTTPS** when the certificate is ready. Verify the deployed
-   content and redirects listed below before retiring the old PHP host.
+## Payment and content sign-off
 
-Use GitHub's [custom workflow instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages),
-[domain verification](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
-and [DNS configuration](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
-Do not rely on DNS addresses copied into an old runbook.
+| Reference | Expected value |
+| --- | --- |
+| Donation recipient on Stellar mainnet | `GCSAXEHZBQY65URLO6YYDOCTRLIGTNMGCQHVW2RZPFNPTEJN6VN7TFIN` |
+| EURMTL issuer | `GACKTN5DAZGWXRWB2WLM6OPBDHAMT6SJNGLJZPQMEZBUR4JUGBX2UK7V` |
+| Council multisig, for governance | `GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM` |
 
-## What was checked locally
+The recipient and Council account match the charter and the previous site's
+configuration. The issuer publishes the same EURMTL key. The native link is
+a SEP-7 `pay` request with the amount omitted so the wallet prompts for it.
+[Fund statute](https://github.com/3TFM/Notary/blob/main/fund/002_Statute.md) ·
+[Issuer metadata](https://mtlf.me/.well-known/stellar.toml) ·
+[Legacy configuration](https://github.com/Montelibero/tfm-fund/blob/452c542/config.php) ·
+[SEP-7](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0007.md)
 
-- All six HTML documents: structure, titles, language alternatives, canonical URLs,
-  local links and fragments, image dimensions, accessible label references and CSP.
-- Four locales at 320, 768 and 1280 pixels: no horizontal overflow; no browser script
-  errors. Native language switching, donation navigation, asset disclosures and
-  support navigation also worked with site scripts blocked by a response CSP.
-- Exact Stellar public keys and checksums, EURMTL issuer, absence of an amount in the
-  native wallet link, Telegram presets, identical project/contact links and decision
-  dates across translations. Clipboard success, permission denial and missing API.
-- Public AI discovery and its content hash. Only `public/` is packaged. The standard
-  Pages upload action excludes dot directories, so this workflow creates its own
-  tar archive and checks that both `.well-known/` files and `llms.txt` are present.
+- [ ] Open the native link in a compatible installed wallet. Check mainnet,
+  the full recipient and issuer above, and that the amount is editable. Cancel.
+- [ ] Open each Telegram preset in MyMTLWalletBot. The public handoff and the old
+  site agree on `eurmtl_tfm_voice-10`, `-50` and `-100`. The bot resolves the
+  username internally. Verify the resolved recipient, EURMTL asset and displayed
+  amount for each, then cancel before signing or confirming. Hold cutover if an
+  identifier differs or cannot be verified. [Legacy redirect](https://github.com/Montelibero/tfm-fund/blob/452c542/donate.php) · [Wallet handler](https://github.com/attid/MyMTLWalletBot/blob/42ab2947cd549ea3990d7b6e7265d56244d9edc2/bot/routers/send.py#L358-L403)
+- [ ] Confirm the Council still accepts the three listed assets and controls
+  `TFM_contact_bot`, `TFM_talk` and `tfm_voice`. Their public destinations match
+  the fund overview. The site links directly to payment requests only for EURMTL.
+  [Fund overview and contacts](https://monte.wiki/ru/Третий_фонд_Монтелиберо)
+- [ ] Review the public AI guide and inherited `ai-train=yes` in `robots.txt`.
+  Project examples now cite the fund's records. Restore claims about festival
+  speaker costs or book printing only with a source that documents those costs.
 
-These checks do not execute transactions, prove wallet compatibility on every
-platform, or run GitHub's hosted deployment. Test an installed wallet's handoff and
-MTL Wallet's displayed recipient and amount before launch, without confirming a
-payment. Telegram is the only organisation contact confirmed by the owner.
+## Switch traffic
 
-## Content and payment references
+1. Record the current DNS web records and TTLs, identify the serving PHP release
+   and verify it can be restored. Keep that host available through propagation.
+2. Review the qualification changes into `static-production`. Configure Pages
+   to use GitHub Actions and restrict the `github-pages` environment to `main`.
+   Require the `check` job, merge the reviewed candidate into `main` and confirm
+   a successful deployment of that revision.
+3. Verify the domain for the Montelibero organisation with GitHub's TXT record.
+   Set the repository's custom domain to `tfm.fund` before changing web DNS.
+   The archived `CNAME` records intent. Apply the current apex and optional
+   `www` records from GitHub, preserving unrelated DNS records.
+   [Domain verification](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages) · [Custom domain setup](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+4. Once the certificate is ready, enable **Enforce HTTPS**. Check DNS, certificate
+   and redirects from outside the old host. Fetch `/`, all four locales, their
+   images, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, and both discovery files.
+   Verify the JSON content type and the digest of the served guide. A nested
+   missing URL and the retired `/donate.php` must return **HTTP 404** with working
+   language links. Check the same status for `/README.md` and `/scripts/check.py`.
 
-The payment account and accepted assets were cross-checked against the existing
-site and the [community overview](https://monte.wiki/ru/Третий_фонд_Монтелиберо), used
-as background. The EURMTL reference links to the [exact issuer on StellarExpert](https://stellar.expert/explorer/public/asset/EURMTL-GACKTN5DAZGWXRWB2WLM6OPBDHAMT6SJNGLJZPQMEZBUR4JUGBX2UK7V-2).
-The separate Council account is linked to the [fund rules](https://github.com/3TFM/Notary/blob/main/fund/002_Statute.md).
-The native URI follows [Stellar SEP-0007](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0007.md),
-whose `pay` operation allows the wallet to ask for an omitted amount.
+## Roll back
 
-Project examples and the three dated records were retained from the supplied
-repository content. Direct Telegram previews confirmed all three dates (30 April
-2026, 27 February 2026 and 31 December 2025) and transaction references to the
-corresponding crowdfunding projects. These are transaction notifications, so the
-page describes them as contribution records, not decision announcements. Project
-descriptions remain selected historical examples, not a complete audit or a claim
-to show the latest activity. Check original messages when updating these examples.
-No live balances, current Council roster, response-time promises or language-service
-promises are published. Native speakers should review future translation changes.
-
-## Production smoke check and rollback
-
-After deployment, check `/`, the four locale paths, `/llms.txt`,
-`/.well-known/agent-skills/index.json`, the linked `SKILL.md`, `/robots.txt`,
-`/sitemap.xml`, image URLs and a deliberately missing path (HTTP 404 with language
-links). Check HTTPS, any `www` redirect, and that the server does not expose
-`/.git/config`, `/README.md`, `/scripts/check.py` or `/.local-backups/`.
-
-Core links and assets are relative and also work on a GitHub project preview path.
-Canonical/AI/sitemap URLs intentionally name `tfm.fund`. The 404 page uses root-relative
-links because it can appear at any depth; preview it on a domain-root server.
-The old `.php` URLs are retired and return 404; old directory links remain valid.
-GitHub Pages cannot interpret old PHP query strings or provide custom server redirects.
-
-The site stores no cookies or browser data, loads no external fonts, analytics or
-scripts, and sends no background requests. All wallet, Telegram and reference visits
-are user-initiated links. GitHub may log IP addresses for security; external services
-have their own policies. HTML CSP restricts resources and forms, and referrer metadata
-suppresses outbound referrers. Pages controls HTTP response headers: HTML meta cannot
-supply `frame-ancestors`, HSTS or other header-only policies. There is no sensitive
-in-page form, account session or transaction signing surface.
-
-For a content regression after cutover, revert the faulty static-site commit through
-a reviewed PR and let checks redeploy `main`. Do not redeploy a PHP-era commit to
-Pages. For a hosting rollback, restore the saved DNS records and old server release.
-Keep GitHub's domain verification TXT record, and never leave Pages DNS pointing at
-a disabled or unclaimed site. Review wallet/contact links and pinned GitHub Actions
-when public references or upstream security advisories change.
+- **Site regression** — revert the affected static changes in a reviewed PR to
+  `main`, rerun the workflow and repeat the public smoke checks.
+- **Hosting, DNS or TLS failure** — restore the saved web records to the verified
+  PHP host. Check DNS, HTTPS, locales and the old donation handoff without sending
+  funds. Keep the domain claimed on Pages until cached records have expired and
+  retain the organisation's verification TXT record.
