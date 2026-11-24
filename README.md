@@ -20,6 +20,11 @@ node scripts/check-copy.mjs
 Python 3.9+ and Node 18+ run the development checks; neither is needed to serve
 the website. CI uses the runtimes already on GitHub's hosted runner.
 
+For the keyboard regression, serve an extracted Pages archive on localhost. With
+`playwright-core` available to Node and `CHROME_PATH` pointing to Chromium, run
+`node scripts/check-browser.cjs http://127.0.0.1:8000/`. It exercises the language
+menu and donation navigation at three viewport widths with page JavaScript disabled.
+
 ## Editing
 
 - `public/{eng,rus,spa,cnr}/index.html` are the source of truth. Keep facts,

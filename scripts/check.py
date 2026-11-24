@@ -36,14 +36,18 @@ class Page(HTMLParser):
         self.elements = []
         self.ids = set()
         self.stack = []
+        self.anchors = []
         self.feed(self.source)
         require(not self.stack, f'{self.path}: unclosed HTML elements {self.stack}')
 
     def handle_starttag(self, tag, attrs):
-        if tag not in {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}:
-            self.stack.append(tag)
         attrs = dict(attrs)
+        if tag not in {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}:
+            self.stack.append((tag, attrs.get('id')))
         self.elements.append((tag, attrs))
+        if tag == 'a':
+            self.anchors.append({'href': attrs.get('href', ''), 'text': '',
+                                 'within': {element_id for _, element_id in self.stack if element_id}})
         if 'id' in attrs:
             require(attrs['id'] not in self.ids, f'{self.path}: duplicate id {attrs["id"]}')
             self.ids.add(attrs['id'])
@@ -58,9 +62,13 @@ class Page(HTMLParser):
             require(all(k in attrs for k in ('alt', 'width', 'height')), f'{self.path}: image needs alt and dimensions')
 
     def handle_endtag(self, tag):
-        require(bool(self.stack) and self.stack[-1] == tag, f'{self.path}: unexpected closing tag {tag}')
+        require(bool(self.stack) and self.stack[-1][0] == tag, f'{self.path}: unexpected closing tag {tag}')
         if self.stack:
             self.stack.pop()
+
+    def handle_data(self, data):
+        if any(tag == 'a' for tag, _ in self.stack):
+            self.anchors[-1]['text'] += data
 
     def attrs(self, tag):
         return [attrs for name, attrs in self.elements if name == tag]
@@ -115,12 +123,14 @@ def check():
         require({a.get('hreflang'): a.get('href') for a in page.attrs('link') if a.get('rel') == 'alternate'} == ALTERNATES, f'{label}: wrong language alternates')
         require(bool(meta.get('description')), f'{label}: missing description')
         require(meta.get('og:url') == canonical and meta.get('og:title'), f'{label}: inconsistent social metadata')
+        card_locale = 'eng' if relative == Path('index.html') else relative.parent.name
+        require(meta.get('og:image') == f'{ORIGIN}/media/og-{card_locale}.jpg', f'{label}: incorrect social image')
 
     link_sets, project_sets, dates = [], [], []
     for folder, lang in LANGUAGES.items():
         page = pages[(PUBLIC / folder / 'index.html').resolve()]
         require(page.attrs('html') == [{'lang': lang}], f'{folder}: incorrect language')
-        links = [a.get('href', '') for a in page.attrs('a')]
+        links = [a['href'] for a in page.anchors]
         link_sets.append({u for u in links if not u.startswith(('../', './'))})
         project_sets.append({i for i in page.ids if i.startswith('project-')})
         dates.append([a.get('datetime') for a in page.attrs('time')])
@@ -138,11 +148,14 @@ def check():
             require(url.path == 'pay' and not url.netloc and not url.fragment and parse_qs(url.query, keep_blank_values=True) == {
                 'destination': [DONATION], 'asset_code': ['EURMTL'], 'asset_issuer': [ISSUER]
             }, f'{folder}: incorrect payment (recipient, asset, amount or unexpected parameters)')
-        require({u for u in links if 'MyMTLWalletBot' in u} == {
-            f'https://t.me/MyMTLWalletBot?start=eurmtl_tfm_voice-{amount}' for amount in (10, 50, 100)
-        }, f'{folder}: incorrect Telegram presets')
-        for account in (DONATION, COUNCIL):
-            require(f'https://stellar.expert/explorer/public/account/{account}' in links, f'{folder}: missing account reference')
+        require(f'<code>{ISSUER}</code>' in page.source, f'{folder}: incorrect visible EURMTL issuer')
+        presets = [(a['href'], ' '.join(a['text'].split())) for a in page.anchors if 'MyMTLWalletBot' in a['href']]
+        expected = [(f'https://t.me/MyMTLWalletBot?start=eurmtl_tfm_voice-{n}', f'{n} EURMTL') for n in (10, 50, 100)]
+        require(sorted(presets) == sorted(expected), f'{folder}: incorrect Telegram preset or displayed amount')
+        explorer = 'https://stellar.expert/explorer/public/account/'
+        for section, account in [('donate', DONATION), ('council', COUNCIL)]:
+            targets = [a['href'] for a in page.anchors if section in a['within'] and a['href'].startswith(explorer)]
+            require(targets == [explorer + account], f'{folder}: incorrect {section} account reference')
         for contact in ('TFM_contact_bot', 'TFM_talk', 'tfm_voice'):
             require(f'https://t.me/{contact}' in links, f'{folder}: missing contact {contact}')
     for values, name in ((link_sets, 'links'), (project_sets, 'projects'), (dates, 'decision dates')):
@@ -151,11 +164,22 @@ def check():
         decoded = base64.b32decode(account)
         require(decoded[0] == 48 and len(decoded) == 35 and binascii.crc_hqx(decoded[:-2], 0).to_bytes(2, 'little') == decoded[-2:], 'Invalid Stellar public key checksum')
 
-    index = json.loads((PUBLIC / '.well-known/agent-skills/index.json').read_text())
-    for skill in index['skills']:
-        path = PUBLIC / urlsplit(skill['url']).path.lstrip('/')
-        require(skill['digest'] == 'sha256:' + hashlib.sha256(path.read_bytes()).hexdigest(), 'Public agent skill hash is stale')
-    require(DONATION in (PUBLIC / 'llms.txt').read_text(), 'AI guide missing donation account')
+    discovery = '.well-known/agent-skills'
+    index = json.loads((PUBLIC / discovery / 'index.json').read_text())
+    require(index.get('$schema') == 'https://schemas.agentskills.io/discovery/0.2.0/schema.json',
+            'Unexpected discovery format')
+    skill_file = f'{discovery}/montelibero-tfm-info/SKILL.md'
+    skills = index.get('skills', [])
+    require(len(skills) == 1, 'Expected one public agent skill')
+    for skill in skills:
+        require(skill.get('name') == 'montelibero-tfm-info' and skill.get('description') and
+                skill.get('type') == 'skill-md' and skill.get('url') == f'{ORIGIN}/{skill_file}',
+                'Invalid public agent skill entry')
+        digest = hashlib.sha256((PUBLIC / skill_file).read_bytes()).hexdigest()
+        require(skill.get('digest') == f'sha256:{digest}', 'Public agent skill digest is missing or stale')
+    for file, accounts in [('llms.txt', {DONATION, ISSUER, COUNCIL}), (skill_file, {DONATION})]:
+        keys = set(re.findall(r'\bG[A-Z2-7]{55}\b', (PUBLIC / file).read_text()))
+        require(keys == accounts, f'{file}: unexpected or missing public account')
     ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9', 'x': 'http://www.w3.org/1999/xhtml'}
     sitemap = ET.parse(PUBLIC / 'sitemap.xml')
     entries = sitemap.findall('s:url', ns)
