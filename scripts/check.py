@@ -154,7 +154,7 @@ def check():
     index = json.loads((PUBLIC / '.well-known/agent-skills/index.json').read_text())
     for skill in index['skills']:
         path = PUBLIC / urlsplit(skill['url']).path.lstrip('/')
-        require(skill['sha256'] == hashlib.sha256(path.read_bytes()).hexdigest(), 'Public agent skill hash is stale')
+        require(skill['digest'] == 'sha256:' + hashlib.sha256(path.read_bytes()).hexdigest(), 'Public agent skill hash is stale')
     require(DONATION in (PUBLIC / 'llms.txt').read_text(), 'AI guide missing donation account')
     ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9', 'x': 'http://www.w3.org/1999/xhtml'}
     sitemap = ET.parse(PUBLIC / 'sitemap.xml')

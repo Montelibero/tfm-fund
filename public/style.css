@@ -52,10 +52,10 @@ ul, ol { padding-left: 1.3rem; }
 .header-inner { display: flex; align-items: center; gap: 1.5rem; padding-block: 1.1rem; }
 .brand { display: flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; line-height: 1.25; font-weight: 650; max-width: 19rem; }
 .brand img { width: 44px; flex-shrink: 0; }
-.main-nav { display: flex; align-items: center; justify-content: flex-end; gap: 1.4rem; margin-left: auto; }
+.main-nav { display: flex; align-items: center; justify-content: flex-end; gap: 1.4rem; }
 .main-nav > a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; font-weight: 600; white-space: nowrap; text-decoration: none; }
 .main-nav > a:hover { text-decoration: underline; }
-.language-picker { position: relative; order: 3; flex-shrink: 0; }
+.language-picker { position: relative; margin-left: auto; flex-shrink: 0; }
 .language-picker summary { padding: .6rem .75rem; font-size: .875rem; border: 1px solid var(--line); border-radius: .45rem; }
 .language-picker nav { position: absolute; right: 0; top: calc(100% + .5rem); width: 13rem; z-index: 5; padding: .5rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); box-shadow: 0 .5rem 1.5rem #252b281a; }
 .language-picker a { display: block; padding: .65rem .8rem; border-radius: .3rem; text-decoration: none; }
@@ -135,8 +135,8 @@ time { font-size: .875rem; color: var(--muted); font-variant-numeric: tabular-nu
 .gateway-footer a { min-height: 44px; display: inline-flex; align-items: center; }
 @media (max-width: 1100px) {
   .header-inner { flex-wrap: wrap; gap: .75rem 1rem; }
-  .brand { max-width: 70%; }
-  .language-picker { order: 0; margin-left: auto; }
+  .brand { max-width: 70%; align-self: flex-start; }
+  .language-picker nav { position: static; width: auto; margin-top: .5rem; }
   .main-nav { width: 100%; margin: 0; justify-content: flex-start; flex-wrap: wrap; gap: .5rem 1.5rem; }
   .hero, .donation-grid, .application { gap: 2rem; }
 }

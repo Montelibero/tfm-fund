@@ -30,7 +30,8 @@ the website. CI uses the runtimes already on GitHub's hosted runner.
 - `public/media/` contains the existing logo, five WebP/JPEG image pairs, four
   localized social cards and browser icons. Remove unused media when replacing it.
 - Keep `public/llms.txt` and `public/.well-known/agent-skills/` accurate. After editing
-  the public `SKILL.md`, update its SHA-256 in `index.json` using `shasum -a 256`.
+  the public `SKILL.md`, run `shasum -a 256` on that file and set the index entry's
+  `digest` to `sha256:` followed by the new hash.
 - Keep the five canonical URLs and language alternatives aligned in the HTML and
   `public/sitemap.xml`. Dates describe actual records, not automatic build dates.
 

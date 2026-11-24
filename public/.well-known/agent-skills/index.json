@@ -3,10 +3,10 @@
   "skills": [
     {
       "name": "montelibero-tfm-info",
-      "type": "markdown",
+      "type": "skill-md",
       "description": "Instructions for answering questions about the Third Fund of Montelibero, its public website, donations, grants, contacts, charter, and safe interpretation boundaries.",
       "url": "https://tfm.fund/.well-known/agent-skills/montelibero-tfm-info/SKILL.md",
-      "sha256": "ae19da16d97310e966fed02991a1e02629d84ef19a92068fbccc0570ccc39a2a"
+      "digest": "sha256:ae19da16d97310e966fed02991a1e02629d84ef19a92068fbccc0570ccc39a2a"
     }
   ]
 }
