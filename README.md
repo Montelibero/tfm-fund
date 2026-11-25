@@ -20,6 +20,11 @@ node scripts/check-copy.mjs
 Python 3.9+ and Node 18+ run the development checks; neither is needed to serve
 the website. CI uses the runtimes already on GitHub's hosted runner.
 
+For the keyboard regression, serve an extracted Pages archive on localhost. With
+`playwright-core` available to Node and `CHROME_PATH` pointing to Chromium, run
+`node scripts/check-browser.cjs http://127.0.0.1:8000/`. It exercises the language
+menu and donation navigation at three viewport widths with page JavaScript disabled.
+
 ## Editing
 
 - `public/{eng,rus,spa,cnr}/index.html` are the source of truth. Keep facts,
@@ -30,7 +35,8 @@ the website. CI uses the runtimes already on GitHub's hosted runner.
 - `public/media/` contains the existing logo, five WebP/JPEG image pairs, four
   localized social cards and browser icons. Remove unused media when replacing it.
 - Keep `public/llms.txt` and `public/.well-known/agent-skills/` accurate. After editing
-  the public `SKILL.md`, update its SHA-256 in `index.json` using `shasum -a 256`.
+  the public `SKILL.md`, run `shasum -a 256` on that file and set the index entry's
+  `digest` to `sha256:` followed by the new hash.
 - Keep the five canonical URLs and language alternatives aligned in the HTML and
   `public/sitemap.xml`. Dates describe actual records, not automatic build dates.
 
@@ -41,8 +47,9 @@ Stellar payment link and asks for an amount. Telegram links offer 10, 50 and 100
 EURMTL; manual transfer of any amount remains available. This site never signs,
 executes or holds a payment. Third-party apps have their own requirements.
 
-GitHub Actions checks pull requests and publishes `public/` after checks pass on
-`main`. It explicitly includes `.well-known/`. See [production handover](docs/production.md)
-for Pages setup, domain cutover, external verification limits and rollback.
+GitHub Actions checks and uploads the same Pages archive on pull requests and
+`main`. CI installs its pinned browser test client outside the site and uses
+the runner's Chrome. Only `main` deploys. See the [cutover and rollback
+checklist](docs/production.md) for the archive contents and live verification.
 
 Application code retains the GPL-3.0 license in `LICENSE`.
