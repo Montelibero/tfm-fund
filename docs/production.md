@@ -19,7 +19,8 @@ and 404 page, shared CSS and copy script, 17 media files, domain and crawler
 metadata, `llms.txt`, and the discovery index and Markdown guide under
 `/.well-known/agent-skills/`. The archive check compares every file with the
 checked publication tree and rejects extra members and links. CI serves the
-extracted tar to Chromium for its keyboard check.
+extracted tar to Chromium. For nested 404 recovery, it serves the archived
+error page at a missing URL and follows all four language links by keyboard.
 
 The qualification pass exercised English, Russian, Spanish and Montenegrin at
 320, 768 and 1280 CSS pixels with page JavaScript disabled. It covered language
@@ -38,15 +39,18 @@ Canonical, sitemap and social URLs name `https://tfm.fund/` even in a preview.
 | Council multisig, for governance | `GDOJK7UAUMQX5IZERYPNBPQYQ3SHPKGLF5MBUKWLDL2UV2AY6BIS3TFM` |
 
 The recipient and Council account match the charter and the previous site's
-configuration. The issuer publishes the same EURMTL key. The native link is
-a SEP-7 `pay` request with the amount omitted so the wallet prompts for it.
+configuration. The issuer publishes the same EURMTL key. Sunce Wallet 1.11.1's
+parser read the archived SEP-7 link as a mainnet EURMTL payment to the address
+above with the amount unset. Chrome offered to open Sunce on macOS. The OS
+opened the wallet, but the test did not establish a visible payment preview.
 [Fund statute](https://github.com/3TFM/Notary/blob/main/fund/002_Statute.md) ·
 [Issuer metadata](https://mtlf.me/.well-known/stellar.toml) ·
 [Legacy configuration](https://github.com/Montelibero/tfm-fund/blob/452c542/config.php) ·
 [SEP-7](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0007.md)
 
-- [ ] Open the native link in a compatible installed wallet. Check mainnet,
-  the full recipient and issuer above, and that the amount is editable. Cancel.
+- [ ] Open the native link in a compatible installed wallet. Verify mainnet,
+  the full recipient and issuer above, and an editable amount in the payment
+  form. Cancel. Hold cutover until a maintainer can verify the preview.
 - [ ] Open each Telegram preset in MyMTLWalletBot. The public handoff and the old
   site agree on `eurmtl_tfm_voice-10`, `-50` and `-100`. The bot resolves the
   username internally. Verify the resolved recipient, EURMTL asset and displayed
@@ -56,9 +60,11 @@ a SEP-7 `pay` request with the amount omitted so the wallet prompts for it.
   `TFM_contact_bot`, `TFM_talk` and `tfm_voice`. Their public destinations match
   the fund overview. The site links directly to payment requests only for EURMTL.
   [Fund overview and contacts](https://monte.wiki/ru/Третий_фонд_Монтелиберо)
-- [ ] Review the public AI guide and inherited `ai-train=yes` in `robots.txt`.
-  Project examples now cite the fund's records. Restore claims about festival
-  speaker costs or book printing only with a source that documents those costs.
+- [ ] Approve the public AI guide and inherited `ai-train=yes` in `robots.txt`.
+  The fund reports support a mapping grant in Montenegro, a LibertyCon booth
+  and four MTL-TV episodes. A Bar-specific open-data grant, festival speaker
+  costs and printing of *Free Private Cities* still need sources for publication.
+  [Mapping grant](https://t.me/tfm_voice/18) · [Conference and TV report](https://t.me/tfm_voice/10)
 
 ## Switch traffic
 
@@ -76,7 +82,8 @@ a SEP-7 `pay` request with the amount omitted so the wallet prompts for it.
 4. Once the certificate is ready, enable **Enforce HTTPS**. Check DNS, certificate
    and redirects from outside the old host. Fetch `/`, all four locales, their
    images, `/robots.txt`, `/sitemap.xml`, `/llms.txt`, and both discovery files.
-   Verify the JSON content type and the digest of the served guide. A nested
+   Verify the index serves `application/json`, the guide serves `text/markdown`
+   or `text/plain`, and the guide's SHA-256 matches the index. A nested
    missing URL and the retired `/donate.php` must return **HTTP 404** with working
    language links. Check the same status for `/README.md` and `/scripts/check.py`.
 
