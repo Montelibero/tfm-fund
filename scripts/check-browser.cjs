@@ -25,10 +25,31 @@ async function checkFocus(page) {
   assert.ok(result.visible, `Focus obscured at ${page.viewportSize().width}px on ${page.url()}: ${result.label}`);
 }
 
+async function checkNotFound(page) {
+  const missing = new URL('missing/nested/page', base).href;
+  assert.equal((await page.request.get(missing)).status(), 404, 'Missing path must return HTTP 404');
+  const errorPage = await page.request.get(new URL('404.html', base).href);
+  assert.equal(errorPage.status(), 200, 'Packaged 404.html must be readable');
+  // Serve the archived error page at the original URL, as Pages should do after cutover.
+  await page.route(missing, route => route.fulfill({ response: errorPage, status: 404 }));
+  for (const locale of locales) {
+    await page.goto(missing);
+    const stylesheetLoaded = await page.locator('link[rel="stylesheet"]').evaluate(link => !!link.sheet?.cssRules.length);
+    assert.ok(stylesheetLoaded, 'The archived 404 stylesheet must load from a nested URL');
+    await tabTo(page, `.language-grid a[href$="${locale}/"]`);
+    const target = new URL(`${locale}/`, base).href;
+    assert.equal(await page.locator(':focus').evaluate(link => link.href), target);
+    const [recovery] = await Promise.all([page.waitForResponse(target), page.keyboard.press('Enter')]);
+    assert.equal(recovery.status(), 200, `Missing ${locale} recovery page`);
+    await page.waitForURL(target);
+  }
+}
+
 async function check(browser, width) {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width, height: 800 } });
   try {
     const page = await context.newPage();
+    await checkNotFound(page);
     for (const locale of locales) {
       await page.goto(base.href);
       await tabTo(page, `.language-grid a[href="${locale}/"]`);

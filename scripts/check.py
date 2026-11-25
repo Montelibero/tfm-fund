@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 PUBLIC = Path(__file__).resolve().parents[1] / 'public'
 ORIGIN = 'https://tfm.fund'
 LANGUAGES = {'eng': 'en', 'rus': 'ru', 'spa': 'es', 'cnr': 'cnr'}
+SOCIAL_LOCALES = {'eng': 'en_US', 'rus': 'ru_RU', 'spa': 'es_ES', 'cnr': 'cnr_ME'}
 ALTERNATES = {lang: f'{ORIGIN}/{folder}/' for folder, lang in LANGUAGES.items()}
 ALTERNATES['x-default'] = ORIGIN + '/'
 # Deliberately pinned independently of the HTML: a typo in a payment must fail CI.
@@ -130,6 +131,13 @@ def check():
     for folder, lang in LANGUAGES.items():
         page = pages[(PUBLIC / folder / 'index.html').resolve()]
         require(page.attrs('html') == [{'lang': lang}], f'{folder}: incorrect language')
+        social_locale = SOCIAL_LOCALES[folder]
+        tags = page.attrs('meta')
+        require([a.get('content') for a in tags if a.get('property') == 'og:locale'] == [social_locale],
+                f'{folder}: incorrect Open Graph locale')
+        alternates = [a.get('content', '') for a in tags if a.get('property') == 'og:locale:alternate']
+        require(sorted(alternates) == sorted(set(SOCIAL_LOCALES.values()) - {social_locale}),
+                f'{folder}: incorrect Open Graph locale alternatives')
         links = [a['href'] for a in page.anchors]
         link_sets.append({u for u in links if not u.startswith(('../', './'))})
         project_sets.append({i for i in page.ids if i.startswith('project-')})
